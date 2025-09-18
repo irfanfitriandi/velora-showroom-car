@@ -9,7 +9,6 @@ import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { NAV_LINKS } from '@/lib/constants';
 import { cn } from '@/lib/utils';
-import Logo from '@/public/images/icon/velora-icon.svg';
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -44,7 +43,14 @@ const Navbar = () => {
       <div className="container mx-auto mt-3 overflow-clip rounded-[12px] bg-white/80 p-5 backdrop-blur-sm">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex text-[28px] font-bold text-black">
-            <Image src={Logo} alt="logo" width={40} height={40} />
+            <Image
+              src={
+                'https://blast-dew-99513560.figma.site/_assets/v11/6444feed97223b4673093780abc23fc85b9b2af4.svg'
+              }
+              alt="logo"
+              width={40}
+              height={40}
+            />
             Velora
           </Link>
           <ul className="flex items-center space-x-8">

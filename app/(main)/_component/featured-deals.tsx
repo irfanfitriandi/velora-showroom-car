@@ -1,10 +1,13 @@
 'use client';
 
 import { AnimatePresence, motion } from 'framer-motion';
+import { ArrowRight, Car, MoveUpRight } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
 
 import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
 import { HOT_DEALS_CARS, HOT_DEALS_FILTERS } from '@/lib/constants';
 import { cn } from '@/lib/utils';
 
@@ -26,7 +29,6 @@ const FeaturedDeals = () => {
             well-maintained, and ready to drive.
           </p>
         </div>
-
         {/* Filter buttons */}
         <div className="mt-12 mb-10 flex flex-wrap justify-center gap-3">
           {HOT_DEALS_FILTERS.map((filter) => (
@@ -43,7 +45,6 @@ const FeaturedDeals = () => {
             </Button>
           ))}
         </div>
-
         {/* Car grid with animation */}
         <div className="mt-20 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           <AnimatePresence>
@@ -55,41 +56,75 @@ const FeaturedDeals = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.3 }}
-                className={`overflow-hidden rounded-lg border shadow-md transition ${
-                  car.highlight ? 'border-vl-primary' : 'border-gray-200 hover:border-gray-400'
-                }`}
               >
-                <div className="relative h-56 w-full">
-                  <Image
-                    src={car.image}
-                    alt={`${car.brand} ${car.model}`}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
+                <Link href={`/cars/${car.id}`} prefetch={false} className="group">
+                  <Card
+                    className={cn(
+                      'relative border-transparent ring-1 ring-gray-200 transition-all duration-300',
+                      'hover:ring-vl-primary hover:shadow-[0_12px_20px_0_rgba(255,179,0,0.32)] hover:ring-2',
+                    )}
+                  >
+                    <div className="relative h-[220px] w-full">
+                      <Image
+                        src={car.image}
+                        alt={`${car.brand} ${car.model}`}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
 
-                <div className="p-4">
-                  <h3 className="text-lg font-bold">
-                    {car.brand} {car.model} ({car.year})
-                  </h3>
-                  <div className="my-2 flex gap-4 text-sm text-gray-600">
-                    <span>{car.specs.year}</span>
-                    <span>{car.specs.transmission}</span>
-                    <span>{car.specs.fuel}</span>
-                    <span>{car.specs.mileage}</span>
-                  </div>
-                  <p className="text-xl font-bold">{car.price}</p>
-                </div>
+                    <CardContent className="flex flex-col gap-4 p-5">
+                      <h3 className="text-[20px] font-semibold">
+                        {car.brand} {car.model} ({car.year})
+                      </h3>
+                      <div className="grid grid-cols-2 gap-4">
+                        {car.specs.map((spec) => (
+                          <div key={spec.label} className="flex gap-2">
+                            <Image
+                              src={spec.icon}
+                              alt={spec.label}
+                              width={20}
+                              height={20}
+                              className="object-contain"
+                            />
+                            <span className="text-sm font-medium text-black">{spec.value}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      <div className="mt-1 h-[1px] w-full border-b"></div>
+
+                      <p className="text-xl font-bold">{car.price}</p>
+                    </CardContent>
+
+                    <div className="bg-vl-primary absolute top-2 right-2 w-fit rounded-full p-2 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100">
+                      <MoveUpRight size={20} />
+                    </div>
+                  </Card>
+                </Link>
               </motion.div>
             ))}
+            {filteredCars.length === 0 && (
+              <div className="col-span-full mt-10 flex flex-col items-center justify-center gap-4">
+                <span className="text-vl-neutral-5 flex items-center gap-2 text-7xl font-bold">
+                  <span>~</span>
+                  <Car className="text-vl-neutral-5" size={72} />
+                </span>
+                <p className="text-vl-neutral-5 col-span-full text-center text-lg">
+                  No cars available for the selected filter.
+                </p>
+              </div>
+            )}
           </AnimatePresence>
         </div>
-
         {/* CTA */}
         <div className="mt-28 flex justify-center pb-4">
-          <button className="bg-vl-primary hover:bg-vl-primary/80 flex items-center gap-2 rounded-md px-6 py-3 font-semibold transition">
-            Explore Cars →
-          </button>
+          <Link href="/cars" prefetch={false}>
+            <Button variant={'vl-primary'} className="font-semibold" size={'lg'}>
+              Explore Cars
+              <ArrowRight />
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
