@@ -375,3 +375,301 @@ export const FAQ_SECTION = {
     },
   ] satisfies FaqItem[],
 };
+
+// BLOG_SECTION
+export const BLOG_SECTION = {
+  HEADING: 'Insights & Tips for Smarter Car Buying',
+  SUBHEADING:
+    'Explore expert advice, market updates, and tips to help you buy and own a used car with confidence.',
+  POSTS: [
+    {
+      id: '1',
+      title: '5 Signs a Used Car is Still in Excellent Condition',
+      excerpt:
+        'Learn how to spot a high-quality used car before buying. From mileage to service records, here’s what smart buyers always check before closing the deal.',
+      content: `
+lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis, auctor consequat urna. Morbi a bibendum metus. Donec scelerisque sollicitudin enim eu venenatis. Duis tincidunt laoreet ex, in pretium orci vestibulum eget. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis pharetra luctus lacus ut vestibulum. Maecenas ipsum lacus, lacinia quis posuere ut, pulvinar vitae dolor. Integer eu nibh at nisi ullamcorper sagittis id vel leo. Integer feugiat faucibus libero, at maximus nisl suscipit posuere. Morbi nec enim nunc. Phasellus bibendum turpis ut ipsum egestas, sed sollicitudin elit convallis. Cras pharetra mi tristique sapien vestibulum lobortis. Nam eget bibendum metus, non dictum mauris. Nulla at tellus sagittis, viverra est a, bibendum metus.
+
+Buying a used car can be intimidating, but knowing what to look for makes it easier.
+Here are five signs a used car is still in excellent condition:
+
+1. Complete service records available.
+2. No unusual sounds when driving.
+3. Minimal wear on the interior.
+4. No rust or major repaint jobs.
+5. Passed a professional inspection.
+
+These indicators will help you choose a reliable car and avoid costly mistakes.`,
+      image: 'https://images.unsplash.com/photo-1550955295-77d6e18a24da',
+      date: '28 July 2025',
+      author: 'Velora Team',
+    },
+    {
+      id: '2',
+      title: 'Top 4 Used Cars with the Best Resale Value in 2025',
+      excerpt:
+        'Discover which used cars hold their value the best this year. We cover SUVs, sedans, and family cars that are smart investments.',
+      content: `
+lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis, auctor consequat urna. Morbi a bibendum metus. Donec scelerisque sollicitudin enim eu venenatis. Duis tincidunt laoreet ex, in pretium orci vestibulum eget. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis pharetra luctus lacus ut vestibulum. Maecenas ipsum lacus, lacinia quis posuere ut, pulvinar vitae dolor. Integer eu nibh at nisi ullamcorper sagittis id vel leo. Integer feugiat faucibus libero, at maximus nisl suscipit posuere. Morbi nec enim nunc. Phasellus bibendum turpis ut ipsum egestas, sed sollicitudin elit convallis. Cras pharetra mi tristique sapien vestibulum lobortis. Nam eget bibendum metus, non dictum mauris. Nulla at tellus sagittis, viverra est a, bibendum metus.
+
+Buying a used car with a high resale value is a smart move for anyone looking to make a solid investment.
+Here’s our top 4 picks for 2025:
+
+1. Toyota Fortuner — durable diesel engine, strong resale at 80–85%.
+2. Honda CR-V — spacious, fuel efficient, resale at 78–82%.
+3. Toyota Hilux — tough double-cabin pickup, resale at 82–84%.
+4. Daihatsu Terios — affordable SUV, resale at 75–80%.
+
+These cars give buyers confidence when it comes time to resell.`,
+      image: 'https://images.unsplash.com/photo-1550955295-77d6e18a24da',
+      date: '20 July 2025',
+      author: 'Velora Team',
+    },
+    {
+      id: '3',
+      title: 'Common Mistakes to Avoid When Buying a Used Car',
+      excerpt:
+        'Many first-time buyers overlook critical details when purchasing a used car. Avoid these mistakes to save time and money.',
+      content: `
+lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis, auctor consequat urna. Morbi a bibendum metus. Donec scelerisque sollicitudin enim eu venenatis. Duis tincidunt laoreet ex, in pretium orci vestibulum eget. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis pharetra luctus lacus ut vestibulum. Maecenas ipsum lacus, lacinia quis posuere ut, pulvinar vitae dolor. Integer eu nibh at nisi ullamcorper sagittis id vel leo. Integer feugiat faucibus libero, at maximus nisl suscipit posuere. Morbi nec enim nunc. Phasellus bibendum turpis ut ipsum egestas, sed sollicitudin elit convallis. Cras pharetra mi tristique sapien vestibulum lobortis. Nam eget bibendum metus, non dictum mauris. Nulla at tellus sagittis, viverra est a, bibendum metus.
+
+When buying a used car, avoid these mistakes:
+
+1. Skipping a professional inspection.
+2. Ignoring the car’s accident history.
+3. Not checking financing options.
+4. Overlooking running costs like fuel and maintenance.
+
+Avoiding these pitfalls ensures a smarter, safer purchase.`,
+      image: 'https://images.unsplash.com/photo-1550955295-77d6e18a24da',
+      date: '15 July 2025',
+      author: 'Velora Team',
+    },
+    {
+      id: '4',
+      title: 'How to Negotiate the Best Price for a Used Car',
+      excerpt:
+        'Negotiating a used car price can save you a lot. Learn the strategies professionals use to get the best deal.',
+      content: `
+lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis, auctor consequat urna. Morbi a bibendum metus. Donec scelerisque sollicitudin enim eu venenatis. Duis tincidunt laoreet ex, in pretium orci vestibulum eget. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis pharetra luctus lacus ut vestibulum. Maecenas ipsum lacus, lacinia quis posuere ut, pulvinar vitae dolor. Integer eu nibh at nisi ullamcorper sagittis id vel leo. Integer feugiat faucibus libero, at maximus nisl suscipit posuere. Morbi nec enim nunc. Phasellus bibendum turpis ut ipsum egestas, sed sollicitudin elit convallis. Cras pharetra mi tristique sapien vestibulum lobortis. Nam eget bibendum metus, non dictum mauris. Nulla at tellus sagittis, viverra est a, bibendum metus.
+
+Negotiating tips:
+
+- Do your research on market prices.
+- Get multiple options before committing.
+- Always be ready to walk away.
+- Use car history and inspection reports to strengthen your case.`,
+      image: 'https://images.unsplash.com/photo-1550955295-77d6e18a24da',
+      date: '10 July 2025',
+      author: 'Velora Team',
+    },
+    {
+      id: '5',
+      title: 'Why Certified Used Cars Are Worth It',
+      excerpt:
+        'Certified used cars often cost more, but they come with peace of mind. Here’s why certification matters.',
+      content: `
+lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis, auctor consequat urna. Morbi a bibendum metus. Donec scelerisque sollicitudin enim eu venenatis. Duis tincidunt laoreet ex, in pretium orci vestibulum eget. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis pharetra luctus lacus ut vestibulum. Maecenas ipsum lacus, lacinia quis posuere ut, pulvinar vitae dolor. Integer eu nibh at nisi ullamcorper sagittis id vel leo. Integer feugiat faucibus libero, at maximus nisl suscipit posuere. Morbi nec enim nunc. Phasellus bibendum turpis ut ipsum egestas, sed sollicitudin elit convallis. Cras pharetra mi tristique sapien vestibulum lobortis. Nam eget bibendum metus, non dictum mauris. Nulla at tellus sagittis, viverra est a, bibendum metus.
+
+Certified used cars are worth considering because:
+
+- Thoroughly inspected by professionals.
+- Usually come with limited warranties.
+- Provide more trust for the buyer.`,
+      image: 'https://images.unsplash.com/photo-1550955295-77d6e18a24da',
+      date: '05 July 2025',
+      author: 'Velora Team',
+    },
+    {
+      id: '6',
+      title: 'Best Financing Options for Used Cars in 2025',
+      excerpt:
+        'Explore the latest financing and installment options available for used car buyers this year.',
+      content: `
+lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis, auctor consequat urna. Morbi a bibendum metus. Donec scelerisque sollicitudin enim eu venenatis. Duis tincidunt laoreet ex, in pretium orci vestibulum eget. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis pharetra luctus lacus ut vestibulum. Maecenas ipsum lacus, lacinia quis posuere ut, pulvinar vitae dolor. Integer eu nibh at nisi ullamcorper sagittis id vel leo. Integer feugiat faucibus libero, at maximus nisl suscipit posuere. Morbi nec enim nunc. Phasellus bibendum turpis ut ipsum egestas, sed sollicitudin elit convallis. Cras pharetra mi tristique sapien vestibulum lobortis. Nam eget bibendum metus, non dictum mauris. Nulla at tellus sagittis, viverra est a, bibendum metus.
+
+Financing tips:
+
+- Compare multiple banks and finance companies.
+- Look for low-interest plans.
+- Ask about flexible early repayment.`,
+      image: 'https://images.unsplash.com/photo-1550955295-77d6e18a24da',
+      date: '01 July 2025',
+      author: 'Velora Team',
+    },
+    {
+      id: '7',
+      title: 'How to Trade In Your Car for Maximum Value',
+      excerpt:
+        'Trading in your old car can reduce the cost of your new purchase. Learn how to maximize your trade-in value.',
+      content: `
+lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis, auctor consequat urna. Morbi a bibendum metus. Donec scelerisque sollicitudin enim eu venenatis. Duis tincidunt laoreet ex, in pretium orci vestibulum eget. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis pharetra luctus lacus ut vestibulum. Maecenas ipsum lacus, lacinia quis posuere ut, pulvinar vitae dolor. Integer eu nibh at nisi ullamcorper sagittis id vel leo. Integer feugiat faucibus libero, at maximus nisl suscipit posuere. Morbi nec enim nunc. Phasellus bibendum turpis ut ipsum egestas, sed sollicitudin elit convallis. Cras pharetra mi tristique sapien vestibulum lobortis. Nam eget bibendum metus, non dictum mauris. Nulla at tellus sagittis, viverra est a, bibendum metus.
+
+Trade-in tips:
+
+- Clean and detail your car before appraisal.
+- Repair minor issues.
+- Gather service records.
+- Time your trade-in when demand is high.`,
+      image: 'https://images.unsplash.com/photo-1550955295-77d6e18a24da',
+      date: '28 June 2025',
+      author: 'Velora Team',
+    },
+    {
+      id: '8',
+      title: 'Used Car Maintenance Tips for Longevity',
+      excerpt:
+        'Maintaining your used car well ensures it stays reliable. Follow these essential maintenance practices.',
+      content: `
+lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis, auctor consequat urna. Morbi a bibendum metus. Donec scelerisque sollicitudin enim eu venenatis. Duis tincidunt laoreet ex, in pretium orci vestibulum eget. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis pharetra luctus lacus ut vestibulum. Maecenas ipsum lacus, lacinia quis posuere ut, pulvinar vitae dolor. Integer eu nibh at nisi ullamcorper sagittis id vel leo. Integer feugiat faucibus libero, at maximus nisl suscipit posuere. Morbi nec enim nunc. Phasellus bibendum turpis ut ipsum egestas, sed sollicitudin elit convallis. Cras pharetra mi tristique sapien vestibulum lobortis. Nam eget bibendum metus, non dictum mauris. Nulla at tellus sagittis, viverra est a, bibendum metus.
+
+Maintenance checklist:
+
+- Regular oil changes.
+- Rotate tires.
+- Replace filters on schedule.
+- Keep up with servicing.`,
+      image: 'https://images.unsplash.com/photo-1550955295-77d6e18a24da',
+      date: '25 June 2025',
+      author: 'Velora Team',
+    },
+    {
+      id: '9',
+      title: 'Should You Buy or Lease a Used Car?',
+      excerpt:
+        'Understand the pros and cons of leasing versus buying a used car to make the right decision for your budget.',
+      content: `
+lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis, auctor consequat urna. Morbi a bibendum metus. Donec scelerisque sollicitudin enim eu venenatis. Duis tincidunt laoreet ex, in pretium orci vestibulum eget. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis pharetra luctus lacus ut vestibulum. Maecenas ipsum lacus, lacinia quis posuere ut, pulvinar vitae dolor. Integer eu nibh at nisi ullamcorper sagittis id vel leo. Integer feugiat faucibus libero, at maximus nisl suscipit posuere. Morbi nec enim nunc. Phasellus bibendum turpis ut ipsum egestas, sed sollicitudin elit convallis. Cras pharetra mi tristique sapien vestibulum lobortis. Nam eget bibendum metus, non dictum mauris. Nulla at tellus sagittis, viverra est a, bibendum metus.
+
+Buying vs Leasing:
+
+- Buying: Ownership, long-term savings.
+- Leasing: Lower upfront cost, but no ownership.
+- Consider your usage and finances before deciding.`,
+      image: 'https://images.unsplash.com/photo-1550955295-77d6e18a24da',
+      date: '20 June 2025',
+      author: 'Velora Team',
+    },
+    {
+      id: '10',
+      title: 'Top Family-Friendly Used Cars in 2025',
+      excerpt:
+        'Looking for a reliable family car? These used cars combine comfort, safety, and value.',
+      content: `
+lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis, auctor consequat urna. Morbi a bibendum metus. Donec scelerisque sollicitudin enim eu venenatis. Duis tincidunt laoreet ex, in pretium orci vestibulum eget. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis pharetra luctus lacus ut vestibulum. Maecenas ipsum lacus, lacinia quis posuere ut, pulvinar vitae dolor. Integer eu nibh at nisi ullamcorper sagittis id vel leo. Integer feugiat faucibus libero, at maximus nisl suscipit posuere. Morbi nec enim nunc. Phasellus bibendum turpis ut ipsum egestas, sed sollicitudin elit convallis. Cras pharetra mi tristique sapien vestibulum lobortis. Nam eget bibendum metus, non dictum mauris. Nulla at tellus sagittis, viverra est a, bibendum metus.
+
+Family-friendly picks:
+
+1. Toyota Avanza
+2. Honda BR-V
+3. Suzuki Ertiga
+4. Mitsubishi Xpander`,
+      image: 'https://images.unsplash.com/photo-1550955295-77d6e18a24da',
+      date: '15 June 2025',
+      author: 'Velora Team',
+    },
+    {
+      id: '11',
+      title: 'How to Check a Used Car’s History Before Buying',
+      excerpt: 'Car history reports are critical. Learn how to use them to avoid hidden issues.',
+      content: `
+lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis, auctor consequat urna. Morbi a bibendum metus. Donec scelerisque sollicitudin enim eu venenatis. Duis tincidunt laoreet ex, in pretium orci vestibulum eget. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis pharetra luctus lacus ut vestibulum. Maecenas ipsum lacus, lacinia quis posuere ut, pulvinar vitae dolor. Integer eu nibh at nisi ullamcorper sagittis id vel leo. Integer feugiat faucibus libero, at maximus nisl suscipit posuere. Morbi nec enim nunc. Phasellus bibendum turpis ut ipsum egestas, sed sollicitudin elit convallis. Cras pharetra mi tristique sapien vestibulum lobortis. Nam eget bibendum metus, non dictum mauris. Nulla at tellus sagittis, viverra est a, bibendum metus.
+
+Check history:
+
+- Look for accident records.
+- Verify odometer readings.
+- Ensure no outstanding loans.`,
+      image: 'https://images.unsplash.com/photo-1550955295-77d6e18a24da',
+      date: '10 June 2025',
+      author: 'Velora Team',
+    },
+    {
+      id: '12',
+      title: 'Best SUVs for Used Car Buyers in 2025',
+      excerpt: 'SUVs dominate the market. Here are the best used SUVs to buy this year.',
+      content: `
+lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis, auctor consequat urna. Morbi a bibendum metus. Donec scelerisque sollicitudin enim eu venenatis. Duis tincidunt laoreet ex, in pretium orci vestibulum eget. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis pharetra luctus lacus ut vestibulum. Maecenas ipsum lacus, lacinia quis posuere ut, pulvinar vitae dolor. Integer eu nibh at nisi ullamcorper sagittis id vel leo. Integer feugiat faucibus libero, at maximus nisl suscipit posuere. Morbi nec enim nunc. Phasellus bibendum turpis ut ipsum egestas, sed sollicitudin elit convallis. Cras pharetra mi tristique sapien vestibulum lobortis. Nam eget bibendum metus, non dictum mauris. Nulla at tellus sagittis, viverra est a, bibendum metus.
+
+Top SUVs:
+
+1. Toyota Fortuner
+2. Honda CR-V
+3. Mitsubishi Pajero Sport
+4. Nissan X-Trail`,
+      image: 'https://images.unsplash.com/photo-1550955295-77d6e18a24da',
+      date: '05 June 2025',
+      author: 'Velora Team',
+    },
+    {
+      id: '13',
+      title: 'Signs of a Flood-Damaged Car (and How to Spot Them)',
+      excerpt: 'Flood-damaged cars can be risky. Learn the warning signs and how to avoid them.',
+      content: `
+lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis, auctor consequat urna. Morbi a bibendum metus. Donec scelerisque sollicitudin enim eu venenatis. Duis tincidunt laoreet ex, in pretium orci vestibulum eget. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis pharetra luctus lacus ut vestibulum. Maecenas ipsum lacus, lacinia quis posuere ut, pulvinar vitae dolor. Integer eu nibh at nisi ullamcorper sagittis id vel leo. Integer feugiat faucibus libero, at maximus nisl suscipit posuere. Morbi nec enim nunc. Phasellus bibendum turpis ut ipsum egestas, sed sollicitudin elit convallis. Cras pharetra mi tristique sapien vestibulum lobortis. Nam eget bibendum metus, non dictum mauris. Nulla at tellus sagittis, viverra est a, bibendum metus.
+
+Flood damage signs:
+
+- Musty smell.
+- Water stains under seats.
+- Corroded wiring.
+- Foggy headlights.`,
+      image: 'https://images.unsplash.com/photo-1550955295-77d6e18a24da',
+      date: '01 June 2025',
+      author: 'Velora Team',
+    },
+    {
+      id: '14',
+      title: 'Top 5 Affordable Sedans in 2025',
+      excerpt: 'Sedans are still popular for budget-conscious buyers. Here are 5 affordable picks.',
+      content: `
+lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis, auctor consequat urna. Morbi a bibendum metus. Donec scelerisque sollicitudin enim eu venenatis. Duis tincidunt laoreet ex, in pretium orci vestibulum eget. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis pharetra luctus lacus ut vestibulum. Maecenas ipsum lacus, lacinia quis posuere ut, pulvinar vitae dolor. Integer eu nibh at nisi ullamcorper sagittis id vel leo. Integer feugiat faucibus libero, at maximus nisl suscipit posuere. Morbi nec enim nunc. Phasellus bibendum turpis ut ipsum egestas, sed sollicitudin elit convallis. Cras pharetra mi tristique sapien vestibulum lobortis. Nam eget bibendum metus, non dictum mauris. Nulla at tellus sagittis, viverra est a, bibendum metus.
+
+Affordable sedans:
+
+1. Toyota Vios
+2. Honda City
+3. Nissan Almera
+4. Suzuki Ciaz
+5. Hyundai Accent`,
+      image: 'https://images.unsplash.com/photo-1550955295-77d6e18a24da',
+      date: '28 May 2025',
+      author: 'Velora Team',
+    },
+    {
+      id: '15',
+      title: 'Why Mileage Matters When Buying a Used Car',
+      excerpt:
+        'Mileage is one of the biggest indicators of a car’s value. Here’s what to know before buying.',
+      content: `
+lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis, auctor consequat urna. Morbi a bibendum metus. Donec scelerisque sollicitudin enim eu venenatis. Duis tincidunt laoreet ex, in pretium orci vestibulum eget. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis pharetra luctus lacus ut vestibulum. Maecenas ipsum lacus, lacinia quis posuere ut, pulvinar vitae dolor. Integer eu nibh at nisi ullamcorper sagittis id vel leo. Integer feugiat faucibus libero, at maximus nisl suscipit posuere. Morbi nec enim nunc. Phasellus bibendum turpis ut ipsum egestas, sed sollicitudin elit convallis. Cras pharetra mi tristique sapien vestibulum lobortis. Nam eget bibendum metus, non dictum mauris. Nulla at tellus sagittis, viverra est a, bibendum metus.
+
+Mileage guide:
+
+- Below 20,000 km/year = excellent.
+- 20,000–30,000 km/year = average.
+- Above 30,000 km/year = high usage.`,
+      image: 'https://images.unsplash.com/photo-1550955295-77d6e18a24da',
+      date: '20 May 2025',
+      author: 'Velora Team',
+    },
+    {
+      id: '16',
+      title: 'Best Hatchbacks for City Driving in 2025',
+      excerpt: 'Hatchbacks are perfect for urban mobility. Here are the top picks for 2025.',
+      content: `
+lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis, auctor consequat urna. Morbi a bibendum metus. Donec scelerisque sollicitudin enim eu venenatis. Duis tincidunt laoreet ex, in pretium orci vestibulum eget. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis pharetra luctus lacus ut vestibulum. Maecenas ipsum lacus, lacinia quis posuere ut, pulvinar vitae dolor. Integer eu nibh at nisi ullamcorper sagittis id vel leo. Integer feugiat faucibus libero, at maximus nisl suscipit posuere. Morbi nec enim nunc. Phasellus bibendum turpis ut ipsum egestas, sed sollicitudin elit convallis. Cras pharetra mi tristique sapien vestibulum lobortis. Nam eget bibendum metus, non dictum mauris. Nulla at tellus sagittis, viverra est a, bibendum metus.
+
+Top hatchbacks:
+
+1. Honda Jazz
+2. Toyota Yaris
+3. Suzuki Swift
+4. Hyundai i20`,
+      image: 'https://images.unsplash.com/photo-1550955295-77d6e18a24da',
+      date: '15 May 2025',
+      author: 'Velora Team',
+    },
+  ],
+  //  satisfies BlogPost[],
+};

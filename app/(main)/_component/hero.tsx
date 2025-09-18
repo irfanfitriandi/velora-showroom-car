@@ -59,7 +59,7 @@ const Hero = () => {
           </div>
 
           <div className="relative flex w-[460px] rounded-[8px] bg-white/20 backdrop-blur-[2px]">
-            <Input className="h-14 border-0 bg-transparent" />
+            <Input className="h-14 border-0 bg-transparent" placeholder="Search..." />
             <Button
               type="submit"
               variant={'vl-primary'}

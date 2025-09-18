@@ -10,8 +10,8 @@ const WhyChooseUS = () => {
   const { ref } = useInView({ triggerOnce: true, threshold: 0.2 });
 
   return (
-    <section ref={ref} className="relative bg-neutral-900 px-6 py-20 text-white md:px-10 xl:px-20">
-      <div className="relative mx-auto grid max-w-7xl grid-cols-1 gap-10 lg:grid-cols-2">
+    <section ref={ref} className="relative bg-neutral-900 py-20 text-white">
+      <div className="relative container mx-auto grid grid-cols-1 gap-10 lg:grid-cols-2">
         {/* LEFT SIDE: Sticky Heading */}
         <div className="h-fit max-w-[568px] self-start lg:sticky lg:top-20">
           <motion.h2

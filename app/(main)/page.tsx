@@ -1,3 +1,4 @@
+import Blog from './_component/blog';
 import Faq from './_component/faq';
 import FeaturedDeals from './_component/featured-deals';
 import Hero from './_component/hero';
@@ -12,6 +13,7 @@ const Home = () => {
       <WhyChooseUS />
       <Testimonials />
       <Faq />
+      <Blog />
     </>
   );
 };
