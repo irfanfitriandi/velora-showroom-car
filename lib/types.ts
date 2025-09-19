@@ -20,6 +20,23 @@ export type FaqItem = {
   answer: string;
 };
 
+export type CarSpec = {
+  label: string;
+  icon: string; // path to SVG
+  value: string | number;
+};
+
+export type HotDealsCar = {
+  id: number;
+  brand: string;
+  model: string;
+  year: number;
+  image: string;
+  specs: CarSpec[];
+  price: string;
+  highlight: boolean;
+};
+
 export type BlogPost = {
   id: string;
   slug: string;

@@ -14,10 +14,10 @@ import Image from 'next/image';
 const FaqSection = () => {
   return (
     <section className="bg-vl-neutral-2 py-20">
-      <div className="bg-vl-neutral-9 relative container mx-auto rounded-[12px] py-24">
+      <div className="bg-vl-neutral-9 relative container mx-auto px-5 py-24 md:rounded-[12px]">
         <div className="mx-auto max-w-[720px] text-center">
-          <h2 className="text-[40px] font-bold text-white">{FAQ_SECTION.HEADING}</h2>
-          <p className="text-vl-neutral-3 mt-5 text-[20px]">{FAQ_SECTION.SUBHEADING}</p>
+          <h2 className="text-2xl font-bold text-white md:text-[40px]">{FAQ_SECTION.HEADING}</h2>
+          <p className="text-vl-neutral-3 mt-5 text-sm md:text-[20px]">{FAQ_SECTION.SUBHEADING}</p>
         </div>
 
         <Accordion type="single" collapsible className="mx-auto mt-20 max-w-[800px]">
@@ -33,7 +33,7 @@ const FaqSection = () => {
             >
               <AccordionTrigger
                 className={cn(
-                  'group-hover:text-vl-primary cursor-pointer p-6 text-left text-[20px] font-semibold',
+                  'group-hover:text-vl-primary cursor-pointer p-6 text-left text-sm font-semibold md:text-[20px]',
                   'hover:no-underline',
                   'data-[state=open]:text-black',
                   'group-hover:[&>svg]:text-vl-primary',
@@ -41,7 +41,7 @@ const FaqSection = () => {
               >
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="cursor-pointer px-6 pb-4 text-base text-black data-[state=open]:text-black">
+              <AccordionContent className="cursor-pointer px-6 pb-4 text-xs text-black data-[state=open]:text-black md:text-base">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>

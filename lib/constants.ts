@@ -19,6 +19,45 @@ export const NAV_LINKS = [
   },
 ] as const;
 
+export const FOOTER_CONTENT = {
+  brand: {
+    icon: 'https://blast-dew-99513560.figma.site/_assets/v11/6444feed97223b4673093780abc23fc85b9b2af4.svg',
+    name: 'Velora',
+    description: 'Discover verified used cars, with full confidence and zero guesswork.',
+    copyright: '© 2025 Velora',
+  },
+  menus: {
+    title: 'MENUS',
+    items: [
+      { label: 'Home', href: '/' },
+      { label: 'Cars for Sale', href: '/cars' },
+      { label: 'Contact', href: '/contact' },
+    ],
+  },
+  social: {
+    title: 'SOCIAL MEDIA',
+    items: [
+      { label: 'LinkedIn', href: 'https://linkedin.com/company/velora' },
+      { label: 'Instagram', href: 'https://instagram.com/velora' },
+      { label: 'X', href: 'https://x.com/velora' },
+    ],
+  },
+  contact: {
+    title: 'CONTACT',
+    items: [
+      { label: 'Phone', value: '(021) 130 7591', href: 'tel:0211307591' },
+      { label: 'WhatsApp', value: '0857 8930 0028', href: 'https://wa.me/6285789300028' },
+      { label: 'Email', value: 'velora@gmail.com', href: 'mailto:velora@gmail.com' },
+      {
+        label: 'Address',
+        value:
+          'Jl. K.H. Mas Mansyur No.121 Level 2, RT.10/RW.11, Karet Tengsin, Kecamatan Tanah Abang, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10220',
+        href: 'https://maps.google.com/?q=Jl.+K.H.+Mas+Mansyur+No.121+Jakarta',
+      },
+    ],
+  },
+};
+
 export const HERO_CONTENT = {
   badge: {
     text: 'Trusted by 500+ used car buyers',
@@ -79,12 +118,28 @@ export const HOT_DEALS_CARS = [
     year: 2014,
     image:
       'https://blast-dew-99513560.figma.site/_assets/v11/05719a3fc9f44854eb4eeee38dac3f4138f5d34a.png',
-    specs: {
-      year: 2018,
-      transmission: 'Matic',
-      fuel: 'Diesel',
-      mileage: '82,000 KM',
-    },
+    specs: [
+      {
+        label: 'Year',
+        icon: 'https://blast-dew-99513560.figma.site/_assets/v11/5325263adcdf9b66d84cec2217f9ff1086f23f6a.svg',
+        value: 2018,
+      },
+      {
+        label: 'Transmission',
+        icon: 'https://blast-dew-99513560.figma.site/_assets/v11/4eec07c05cd54db4056cecdcb95ce341abccba61.svg',
+        value: 'Matic',
+      },
+      {
+        label: 'Fuel',
+        icon: 'https://blast-dew-99513560.figma.site/_assets/v11/1e8115e8f7986e3c0f714370eaa4d9b69f8b61c1.svg',
+        value: 'Diesel',
+      },
+      {
+        label: 'Mileage',
+        icon: 'https://blast-dew-99513560.figma.site/_assets/v11/ea3c54e07791213ad4c4eedfc246af07fd2ec11d.svg',
+        value: '82,000 KM',
+      },
+    ],
     price: 'Rp 297.000.000',
     highlight: false,
   },
@@ -95,12 +150,28 @@ export const HOT_DEALS_CARS = [
     year: 2015,
     image:
       'https://blast-dew-99513560.figma.site/_assets/v11/05719a3fc9f44854eb4eeee38dac3f4138f5d34a.png',
-    specs: {
-      year: 2018,
-      transmission: 'Matic',
-      fuel: 'Diesel',
-      mileage: '82,000 KM',
-    },
+    specs: [
+      {
+        label: 'Year',
+        icon: 'https://blast-dew-99513560.figma.site/_assets/v11/5325263adcdf9b66d84cec2217f9ff1086f23f6a.svg',
+        value: 2018,
+      },
+      {
+        label: 'Transmission',
+        icon: 'https://blast-dew-99513560.figma.site/_assets/v11/4eec07c05cd54db4056cecdcb95ce341abccba61.svg',
+        value: 'Matic',
+      },
+      {
+        label: 'Fuel',
+        icon: 'https://blast-dew-99513560.figma.site/_assets/v11/1e8115e8f7986e3c0f714370eaa4d9b69f8b61c1.svg',
+        value: 'Diesel',
+      },
+      {
+        label: 'Mileage',
+        icon: 'https://blast-dew-99513560.figma.site/_assets/v11/ea3c54e07791213ad4c4eedfc246af07fd2ec11d.svg',
+        value: '82,000 KM',
+      },
+    ],
     price: 'Rp 285.000.000',
     highlight: false,
   },
@@ -111,14 +182,30 @@ export const HOT_DEALS_CARS = [
     year: 2018,
     image:
       'https://blast-dew-99513560.figma.site/_assets/v11/05719a3fc9f44854eb4eeee38dac3f4138f5d34a.png',
-    specs: {
-      year: 2018,
-      transmission: 'Matic',
-      fuel: 'Diesel',
-      mileage: '82,000 KM',
-    },
+    specs: [
+      {
+        label: 'Year',
+        icon: 'https://blast-dew-99513560.figma.site/_assets/v11/5325263adcdf9b66d84cec2217f9ff1086f23f6a.svg',
+        value: 2018,
+      },
+      {
+        label: 'Transmission',
+        icon: 'https://blast-dew-99513560.figma.site/_assets/v11/4eec07c05cd54db4056cecdcb95ce341abccba61.svg',
+        value: 'Matic',
+      },
+      {
+        label: 'Fuel',
+        icon: 'https://blast-dew-99513560.figma.site/_assets/v11/1e8115e8f7986e3c0f714370eaa4d9b69f8b61c1.svg',
+        value: 'Diesel',
+      },
+      {
+        label: 'Mileage',
+        icon: 'https://blast-dew-99513560.figma.site/_assets/v11/ea3c54e07791213ad4c4eedfc246af07fd2ec11d.svg',
+        value: '82,000 KM',
+      },
+    ],
     price: 'Rp 285.000.000',
-    highlight: true, // misalnya yang dikasih border kuning
+    highlight: true,
   },
   {
     id: 4,
@@ -127,12 +214,28 @@ export const HOT_DEALS_CARS = [
     year: 2015,
     image:
       'https://blast-dew-99513560.figma.site/_assets/v11/05719a3fc9f44854eb4eeee38dac3f4138f5d34a.png',
-    specs: {
-      year: 2018,
-      transmission: 'Matic',
-      fuel: 'Diesel',
-      mileage: '82,000 KM',
-    },
+    specs: [
+      {
+        label: 'Year',
+        icon: 'https://blast-dew-99513560.figma.site/_assets/v11/5325263adcdf9b66d84cec2217f9ff1086f23f6a.svg',
+        value: 2018,
+      },
+      {
+        label: 'Transmission',
+        icon: 'https://blast-dew-99513560.figma.site/_assets/v11/4eec07c05cd54db4056cecdcb95ce341abccba61.svg',
+        value: 'Matic',
+      },
+      {
+        label: 'Fuel',
+        icon: 'https://blast-dew-99513560.figma.site/_assets/v11/1e8115e8f7986e3c0f714370eaa4d9b69f8b61c1.svg',
+        value: 'Diesel',
+      },
+      {
+        label: 'Mileage',
+        icon: 'https://blast-dew-99513560.figma.site/_assets/v11/ea3c54e07791213ad4c4eedfc246af07fd2ec11d.svg',
+        value: '82,000 KM',
+      },
+    ],
     price: 'Rp 285.000.000',
     highlight: false,
   },
@@ -143,12 +246,28 @@ export const HOT_DEALS_CARS = [
     year: 2018,
     image:
       'https://blast-dew-99513560.figma.site/_assets/v11/05719a3fc9f44854eb4eeee38dac3f4138f5d34a.png',
-    specs: {
-      year: 2018,
-      transmission: 'Matic',
-      fuel: 'Diesel',
-      mileage: '82,000 KM',
-    },
+    specs: [
+      {
+        label: 'Year',
+        icon: 'https://blast-dew-99513560.figma.site/_assets/v11/5325263adcdf9b66d84cec2217f9ff1086f23f6a.svg',
+        value: 2018,
+      },
+      {
+        label: 'Transmission',
+        icon: 'https://blast-dew-99513560.figma.site/_assets/v11/4eec07c05cd54db4056cecdcb95ce341abccba61.svg',
+        value: 'Matic',
+      },
+      {
+        label: 'Fuel',
+        icon: 'https://blast-dew-99513560.figma.site/_assets/v11/1e8115e8f7986e3c0f714370eaa4d9b69f8b61c1.svg',
+        value: 'Diesel',
+      },
+      {
+        label: 'Mileage',
+        icon: 'https://blast-dew-99513560.figma.site/_assets/v11/ea3c54e07791213ad4c4eedfc246af07fd2ec11d.svg',
+        value: '82,000 KM',
+      },
+    ],
     price: 'Rp 285.000.000',
     highlight: false,
   },
@@ -159,12 +278,28 @@ export const HOT_DEALS_CARS = [
     year: 2014,
     image:
       'https://blast-dew-99513560.figma.site/_assets/v11/05719a3fc9f44854eb4eeee38dac3f4138f5d34a.png',
-    specs: {
-      year: 2018,
-      transmission: 'Matic',
-      fuel: 'Diesel',
-      mileage: '82,000 KM',
-    },
+    specs: [
+      {
+        label: 'Year',
+        icon: 'https://blast-dew-99513560.figma.site/_assets/v11/5325263adcdf9b66d84cec2217f9ff1086f23f6a.svg',
+        value: 2018,
+      },
+      {
+        label: 'Transmission',
+        icon: 'https://blast-dew-99513560.figma.site/_assets/v11/4eec07c05cd54db4056cecdcb95ce341abccba61.svg',
+        value: 'Matic',
+      },
+      {
+        label: 'Fuel',
+        icon: 'https://blast-dew-99513560.figma.site/_assets/v11/1e8115e8f7986e3c0f714370eaa4d9b69f8b61c1.svg',
+        value: 'Diesel',
+      },
+      {
+        label: 'Mileage',
+        icon: 'https://blast-dew-99513560.figma.site/_assets/v11/ea3c54e07791213ad4c4eedfc246af07fd2ec11d.svg',
+        value: '82,000 KM',
+      },
+    ],
     price: 'Rp 297.000.000',
     highlight: false,
   },

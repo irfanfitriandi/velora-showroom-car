@@ -11,15 +11,15 @@ const WhyChooseUS = () => {
 
   return (
     <section ref={ref} className="relative bg-neutral-900 py-20 text-white">
-      <div className="relative container mx-auto grid grid-cols-1 gap-10 lg:grid-cols-2">
+      <div className="relative container mx-auto grid grid-cols-1 gap-10 px-5 lg:grid-cols-2">
         {/* LEFT SIDE: Sticky Heading */}
-        <div className="h-fit max-w-[568px] self-start lg:sticky lg:top-20">
+        <div className="h-fit w-full self-start lg:sticky lg:top-20 lg:max-w-[568px]">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="mb-4 text-3xl font-semibold md:text-[40px]"
+            className="mb-4 text-center text-2xl font-semibold md:text-left md:text-[40px]"
           >
             {WHY_CHOOSE_US.heading}
           </motion.h2>
@@ -29,7 +29,7 @@ const WhyChooseUS = () => {
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-base text-gray-300 md:text-[20px]"
+            className="text-center text-sm text-gray-300 md:text-left md:text-[20px]"
           >
             {WHY_CHOOSE_US.subheading}
           </motion.p>
@@ -39,14 +39,9 @@ const WhyChooseUS = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4, duration: 0.6 }}
             viewport={{ once: true }}
-            className="relative mt-8 overflow-hidden rounded-[8px] shadow-lg"
+            className="relative mt-8 aspect-[568/280] overflow-hidden rounded-[8px] shadow-lg"
           >
-            <Image
-              src={WHY_CHOOSE_US.badge.banner}
-              alt="badge-choose-us"
-              width={568}
-              height={280}
-            />
+            <Image src={WHY_CHOOSE_US.badge.banner} alt="badge-choose-us" fill />
           </motion.div>
         </div>
 
@@ -63,8 +58,8 @@ const WhyChooseUS = () => {
                 viewport={{ once: true, amount: 0.3 }}
                 className="bg-vl-neutral-8 sticky top-24 rounded-xl p-10"
                 style={{
-                  transform: `translateY(${index * 4}rem)`, // offset tiap card
-                  zIndex: WHY_CHOOSE_US.features.length + index, // biar tumpukannya rapih
+                  transform: `translateY(${index * 4}rem)`, // offset card
+                  zIndex: WHY_CHOOSE_US.features.length + index,
                 }}
               >
                 <div className="flex flex-col items-start gap-4">
@@ -72,8 +67,10 @@ const WhyChooseUS = () => {
                     {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                     <FeatureIcon name={feature.icon as any} className="h-7 w-7 text-black" />
                   </div>
-                  <h4 className="text-[20px] font-semibold text-white">{feature.title}</h4>
-                  <p className="text-base text-gray-300">{feature.description}</p>
+                  <h4 className="text-base font-semibold text-white md:text-[20px]">
+                    {feature.title}
+                  </h4>
+                  <p className="text-sm text-gray-300 md:text-base">{feature.description}</p>
                 </div>
 
                 <span className="absolute right-6 bottom-24 text-[180px] leading-0 font-bold text-neutral-100/[4%]">

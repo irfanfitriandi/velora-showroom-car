@@ -11,13 +11,13 @@ const Testimonials = () => {
 
   return (
     <section className="overflow-hidden bg-white py-24">
-      <div className="container mx-auto max-w-xl text-center">
+      <div className="container mx-auto max-w-xl px-5 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-vl-neutral-9 text-3xl font-bold md:text-[40px]"
+          className="text-vl-neutral-9 text-2xl font-bold md:text-[40px]"
         >
           {TESTIMONIALS_SECTION.HEADING}
         </motion.h2>
@@ -26,13 +26,13 @@ const Testimonials = () => {
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-vl-neutral-5 mx-auto mt-5"
+          className="text-vl-neutral-5 mx-auto mt-5 text-sm md:text-base"
         >
           {TESTIMONIALS_SECTION.SUBHEADING}
         </motion.p>
       </div>
 
-      <div className="relative container mx-auto mt-20 overflow-clip">
+      <div className="relative container mx-auto mt-20 overflow-clip px-5">
         {/* Row 1 - scroll left */}
         <motion.div
           className="mb-10 flex gap-6"
