@@ -36,11 +36,11 @@ const Navbar = () => {
   return (
     <nav
       className={cn(
-        `fixed top-0 left-0 z-10 w-full transition-all duration-300`,
+        `fixed top-0 left-0 z-10 w-full px-5 transition-all duration-300`,
         isScrolledUp ? 'translate-y-0 transform' : '-translate-y-full transform',
       )}
     >
-      <div className="container mx-auto mt-3 overflow-clip rounded-[12px] bg-white/80 p-5 backdrop-blur-sm">
+      <div className="container mx-auto mt-3 overflow-clip rounded-[12px] bg-white/80 p-5 px-5 backdrop-blur-sm">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex text-[28px] font-bold text-black">
             <Image
@@ -53,7 +53,7 @@ const Navbar = () => {
             />
             Velora
           </Link>
-          <ul className="flex items-center space-x-8">
+          <ul className="hidden items-center space-x-8 md:flex">
             {NAV_LINKS.map((link) => (
               <li key={link.path} className="relative">
                 <Link
@@ -71,7 +71,7 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
-          <Button>
+          <Button className="hidden md:flex">
             <span className="text-vl-primary">Contact</span>
             <MoveRight className="fill-vl-primary" color="#FFB300" />
           </Button>

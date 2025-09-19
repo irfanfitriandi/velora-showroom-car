@@ -11,9 +11,9 @@ const WhyChooseUS = () => {
 
   return (
     <section ref={ref} className="relative bg-neutral-900 py-20 text-white">
-      <div className="relative container mx-auto grid grid-cols-1 gap-10 lg:grid-cols-2">
+      <div className="relative container mx-auto grid grid-cols-1 gap-10 px-5 lg:grid-cols-2">
         {/* LEFT SIDE: Sticky Heading */}
-        <div className="h-fit max-w-[568px] self-start lg:sticky lg:top-20">
+        <div className="h-fit w-full self-start lg:sticky lg:top-20 lg:max-w-[568px]">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -39,14 +39,9 @@ const WhyChooseUS = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4, duration: 0.6 }}
             viewport={{ once: true }}
-            className="relative mt-8 overflow-hidden rounded-[8px] shadow-lg"
+            className="relative mt-8 aspect-[568/280] overflow-hidden rounded-[8px] shadow-lg"
           >
-            <Image
-              src={WHY_CHOOSE_US.badge.banner}
-              alt="badge-choose-us"
-              width={568}
-              height={280}
-            />
+            <Image src={WHY_CHOOSE_US.badge.banner} alt="badge-choose-us" fill />
           </motion.div>
         </div>
 

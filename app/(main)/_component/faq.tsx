@@ -14,7 +14,7 @@ import Image from 'next/image';
 const FaqSection = () => {
   return (
     <section className="bg-vl-neutral-2 py-20">
-      <div className="bg-vl-neutral-9 relative container mx-auto rounded-[12px] py-24">
+      <div className="bg-vl-neutral-9 relative container mx-auto rounded-[12px] px-5 py-24">
         <div className="mx-auto max-w-[720px] text-center">
           <h2 className="text-[40px] font-bold text-white">{FAQ_SECTION.HEADING}</h2>
           <p className="text-vl-neutral-3 mt-5 text-[20px]">{FAQ_SECTION.SUBHEADING}</p>

@@ -21,7 +21,7 @@ const FeaturedDeals = () => {
 
   return (
     <section className="text-vl-neutral-9 bg-white py-24">
-      <div className="container mx-auto">
+      <div className="container mx-auto px-5">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-[40px] font-semibold">Hot Deals on Used Cars</h2>
           <p className="text-vl-neutral-5 mt-5 text-xl">
