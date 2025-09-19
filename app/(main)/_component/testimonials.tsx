@@ -17,7 +17,7 @@ const Testimonials = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-vl-neutral-9 text-3xl font-bold md:text-[40px]"
+          className="text-vl-neutral-9 text-2xl font-bold md:text-[40px]"
         >
           {TESTIMONIALS_SECTION.HEADING}
         </motion.h2>
@@ -26,7 +26,7 @@ const Testimonials = () => {
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-vl-neutral-5 mx-auto mt-5"
+          className="text-vl-neutral-5 mx-auto mt-5 text-sm md:text-base"
         >
           {TESTIMONIALS_SECTION.SUBHEADING}
         </motion.p>

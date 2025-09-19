@@ -21,8 +21,8 @@ const Blog = () => {
           transition={{ duration: 0.6 }}
           className="mb-12 text-center"
         >
-          <h2 className="text-3xl font-bold md:text-4xl">{BLOG_SECTION.HEADING}</h2>
-          <p className="mt-2 text-gray-500">{BLOG_SECTION.SUBHEADING}</p>
+          <h2 className="text-2xl font-bold md:text-4xl">{BLOG_SECTION.HEADING}</h2>
+          <p className="mt-2 text-sm text-gray-500 md:text-base">{BLOG_SECTION.SUBHEADING}</p>
         </motion.div>
 
         {/* Blog Grid */}
@@ -43,16 +43,18 @@ const Blog = () => {
                   height={600}
                 />
                 <CardContent className="pb-6">
-                  <p className="text-vl-neutral-5 text-sm">{BLOG_SECTION.POSTS[0].date}</p>
-                  <h3 className="mt-2 line-clamp-1 text-xl font-semibold text-black">
+                  <p className="text-vl-neutral-5 text-xs md:text-sm">
+                    {BLOG_SECTION.POSTS[0].date}
+                  </p>
+                  <h3 className="mt-2 line-clamp-1 text-base font-semibold text-black md:text-xl">
                     {BLOG_SECTION.POSTS[0].title}
                   </h3>
-                  <p className="text-vl-neutral-5 mt-2 line-clamp-3 text-base">
+                  <p className="text-vl-neutral-5 mt-2 line-clamp-3 text-xs md:text-base">
                     {BLOG_SECTION.POSTS[0].excerpt}
                   </p>
                   <Link
                     href={`/blog/${BLOG_SECTION.POSTS[0].id}`}
-                    className="group-hover:text-vl-primary mt-4 inline-flex items-center gap-1 font-semibold text-black transition-all"
+                    className="group-hover:text-vl-primary mt-4 inline-flex items-center gap-1 text-sm font-semibold text-black transition-all md:text-base"
                   >
                     Read More →
                   </Link>
@@ -80,15 +82,17 @@ const Blog = () => {
                   />
                   <CardContent className="flex flex-col justify-between p-4">
                     <div>
-                      <p className="text-sm text-gray-400">{post.date}</p>
-                      <h3 className="mt-1 line-clamp-2 text-base font-semibold text-black">
+                      <p className="text-xs text-gray-400 md:text-sm">{post.date}</p>
+                      <h3 className="mt-1 line-clamp-2 text-base font-semibold text-black md:text-xl">
                         {post.title}
                       </h3>
-                      <p className="mt-1 line-clamp-2 text-sm text-gray-600">{post.excerpt}</p>
+                      <p className="mt-1 line-clamp-2 text-xs text-gray-600 md:text-base">
+                        {post.excerpt}
+                      </p>
                     </div>
                     <Link
                       href={`/blog/${post.id}`}
-                      className="group-hover:text-vl-primary mt-3 inline-flex items-center gap-1 font-semibold text-black transition-all"
+                      className="group-hover:text-vl-primary mt-3 inline-flex items-center gap-1 text-sm font-semibold text-black transition-all md:text-base"
                     >
                       Read More →
                     </Link>
@@ -104,7 +108,7 @@ const Blog = () => {
           <Link
             href="/blog"
             className={cn(
-              'inline-flex items-center gap-2 rounded-md bg-yellow-400 px-5 py-3 font-semibold text-black transition-colors hover:bg-yellow-500',
+              'inline-flex items-center gap-2 rounded-md bg-yellow-400 px-5 py-3 text-sm font-semibold text-black transition-colors hover:bg-yellow-500 md:text-base',
             )}
           >
             See More Articles →

@@ -23,21 +23,21 @@ const FeaturedDeals = () => {
     <section className="text-vl-neutral-9 bg-white py-24">
       <div className="container mx-auto px-5">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-[40px] font-semibold">Hot Deals on Used Cars</h2>
-          <p className="text-vl-neutral-5 mt-5 text-xl">
+          <h2 className="text-2xl font-semibold md:text-[40px]">Hot Deals on Used Cars</h2>
+          <p className="text-vl-neutral-5 mt-5 text-sm md:text-xl">
             Get the best prices on high-quality, certified used cars carefully inspected,
             well-maintained, and ready to drive.
           </p>
         </div>
         {/* Filter buttons */}
-        <div className="mt-12 mb-10 flex flex-wrap justify-center gap-3">
+        <div className="mt-10 flex gap-3 overflow-auto md:mt-12">
           {HOT_DEALS_FILTERS.map((filter) => (
             <Button
               key={filter}
               onClick={() => setActiveFilter(filter)}
               variant={activeFilter === filter ? 'vl-primary' : 'vl-default'}
               className={cn(
-                'hover:bg-vl-primary/80 border',
+                'hover:bg-vl-primary/80 text- border text-sm md:text-base',
                 activeFilter === filter && 'border-0 font-bold',
               )}
             >
@@ -46,7 +46,7 @@ const FeaturedDeals = () => {
           ))}
         </div>
         {/* Car grid with animation */}
-        <div className="mt-20 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid grid-cols-1 gap-6 md:mt-20 md:grid-cols-2 lg:grid-cols-3">
           <AnimatePresence>
             {filteredCars.map((car) => (
               <motion.div
@@ -74,7 +74,7 @@ const FeaturedDeals = () => {
                     </div>
 
                     <CardContent className="flex flex-col gap-4 p-5">
-                      <h3 className="text-[20px] font-semibold">
+                      <h3 className="text-base font-semibold md:text-[20px]">
                         {car.brand} {car.model} ({car.year})
                       </h3>
                       <div className="grid grid-cols-2 gap-4">
@@ -85,16 +85,18 @@ const FeaturedDeals = () => {
                               alt={spec.label}
                               width={20}
                               height={20}
-                              className="object-contain"
+                              className="h-4 w-4 object-contain md:h-5 md:w-5"
                             />
-                            <span className="text-sm font-medium text-black">{spec.value}</span>
+                            <span className="text-xs font-medium text-black md:text-sm">
+                              {spec.value}
+                            </span>
                           </div>
                         ))}
                       </div>
 
                       <div className="mt-1 h-[1px] w-full border-b"></div>
 
-                      <p className="text-xl font-bold">{car.price}</p>
+                      <p className="text-base font-bold md:text-xl">{car.price}</p>
                     </CardContent>
 
                     <div className="bg-vl-primary absolute top-2 right-2 w-fit rounded-full p-2 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100">
@@ -120,7 +122,11 @@ const FeaturedDeals = () => {
         {/* CTA */}
         <div className="mt-28 flex justify-center pb-4">
           <Link href="/cars" prefetch={false}>
-            <Button variant={'vl-primary'} className="font-semibold" size={'lg'}>
+            <Button
+              variant={'vl-primary'}
+              className="text-sm font-semibold md:text-base"
+              size={'lg'}
+            >
               Explore Cars
               <ArrowRight />
             </Button>

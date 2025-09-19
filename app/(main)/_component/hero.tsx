@@ -8,7 +8,7 @@ import BgHero from '@/public/images/bg-hero.jpg';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-[1224px] bg-white">
+    <section className="relative min-h-[1250px] bg-white lg:min-h-[1224px]">
       <div className="relative h-[1008px]">
         <Image
           src={BgHero}
