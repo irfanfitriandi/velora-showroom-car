@@ -60,6 +60,7 @@ export const FOOTER_CONTENT = {
 
 export const HERO_CONTENT = {
   badge: {
+    icon: 'https://blast-dew-99513560.figma.site/_assets/v11/869b8fff853fe7fb8df617e562c27f3cf9145bc0.svg',
     text: 'Trusted by 500+ used car buyers',
   },
   title: 'Find Your Trusted Used Car, Ready to Drive',
@@ -319,28 +320,28 @@ export const WHY_CHOOSE_US = {
   features: [
     {
       id: 1,
-      icon: 'verified',
+      icon: 'https://blast-dew-99513560.figma.site/_assets/v11/444c05bebc9760b37b17cfb8a39cffae7957c9c4.svg',
       title: 'Certified Used Cars',
       description:
         'Every car is professionally inspected and certified to meet high standards of safety and performance.',
     },
     {
       id: 2,
-      icon: 'badge-dollar-sign',
+      icon: 'https://blast-dew-99513560.figma.site/_assets/v11/d62136bd4876a732f346c27ecffb3189817349ea.svg',
       title: 'Transparent Pricing',
       description:
         'No hidden fees or gimmicks. What you see is what you pay. Honest pricing every step of the way.',
     },
     {
       id: 3,
-      icon: 'users',
+      icon: 'https://blast-dew-99513560.figma.site/_assets/v11/bd1e70984b4f5c5aea71f624e70edc0109230d84.svg',
       title: 'Real Human Support',
       description:
         'Got questions? Our team is ready to assist you directly via WhatsApp — no bots, no delays.',
     },
     {
       id: 4,
-      icon: 'credit-card',
+      icon: 'https://blast-dew-99513560.figma.site/_assets/v11/96aeb1513d1f7093a286f01305061cfa5dad7fe7.svg',
       title: 'Flexible Installment Options',
       description:
         'Custom financing options made for you. Experience peace of mind while driving your certified dream car today.',

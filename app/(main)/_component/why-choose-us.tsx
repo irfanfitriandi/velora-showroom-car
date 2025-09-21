@@ -1,6 +1,5 @@
 'use client';
 
-import { FeatureIcon } from '@/components/shared/feature-icon';
 import { WHY_CHOOSE_US } from '@/lib/constants';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
@@ -11,7 +10,7 @@ const WhyChooseUS = () => {
 
   return (
     <section ref={ref} className="relative bg-neutral-900 py-20 text-white">
-      <div className="relative container mx-auto grid grid-cols-1 gap-10 px-5 lg:grid-cols-2">
+      <div className="relative container grid grid-cols-1 gap-10 px-5 lg:grid-cols-2">
         {/* LEFT SIDE: Sticky Heading */}
         <div className="h-fit w-full self-start lg:sticky lg:top-20 lg:max-w-[568px]">
           <motion.h2
@@ -29,7 +28,7 @@ const WhyChooseUS = () => {
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center text-sm text-gray-300 md:text-left md:text-[20px]"
+            className="text-center text-sm text-gray-300 md:text-left md:text-xl"
           >
             {WHY_CHOOSE_US.subheading}
           </motion.p>
@@ -64,8 +63,13 @@ const WhyChooseUS = () => {
               >
                 <div className="flex flex-col items-start gap-4">
                   <div className="bg-vl-primary rounded-md p-4">
-                    {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-                    <FeatureIcon name={feature.icon as any} className="h-7 w-7 text-black" />
+                    {}
+                    <Image
+                      src={feature.icon}
+                      alt={`${feature.title}-icon`}
+                      width={28}
+                      height={28}
+                    />
                   </div>
                   <h4 className="text-base font-semibold text-white md:text-[20px]">
                     {feature.title}
