@@ -40,9 +40,9 @@ const Navbar = () => {
         isScrolledUp ? 'translate-y-0 transform' : '-translate-y-full transform',
       )}
     >
-      <div className="container mx-auto mt-3 overflow-clip rounded-[12px] bg-white/80 p-5 px-5 backdrop-blur-sm">
+      <div className="container mt-3 overflow-clip rounded-[12px] bg-white/80 p-5 px-5 backdrop-blur-sm">
         <div className="flex items-center justify-between">
-          <Link href="/" className="flex text-[28px] font-bold text-black">
+          <Link href="/" className="flex text-2xl font-bold text-black md:text-[28px]">
             <Image
               src={
                 'https://blast-dew-99513560.figma.site/_assets/v11/6444feed97223b4673093780abc23fc85b9b2af4.svg'
@@ -50,6 +50,7 @@ const Navbar = () => {
               alt="logo"
               width={40}
               height={40}
+              className="h-[30px] w-[30px] md:h-[40px] md:w-[40px]"
             />
             Velora
           </Link>

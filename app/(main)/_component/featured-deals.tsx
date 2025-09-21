@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 
+import { AutoJustifyScrollRow } from '@/components/shared/auto-justify-scroll-row';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { HOT_DEALS_CARS, HOT_DEALS_FILTERS } from '@/lib/constants';
@@ -21,7 +22,7 @@ const FeaturedDeals = () => {
 
   return (
     <section className="text-vl-neutral-9 bg-white py-24">
-      <div className="container mx-auto px-5">
+      <div className="container px-5">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-2xl font-semibold md:text-[40px]">Hot Deals on Used Cars</h2>
           <p className="text-vl-neutral-5 mt-5 text-sm md:text-xl">
@@ -30,7 +31,7 @@ const FeaturedDeals = () => {
           </p>
         </div>
         {/* Filter buttons */}
-        <div className="mt-10 flex gap-3 overflow-auto md:mt-12">
+        <AutoJustifyScrollRow className="mt-10 md:mt-12">
           {HOT_DEALS_FILTERS.map((filter) => (
             <Button
               key={filter}
@@ -44,7 +45,7 @@ const FeaturedDeals = () => {
               {filter}
             </Button>
           ))}
-        </div>
+        </AutoJustifyScrollRow>
         {/* Car grid with animation */}
         <div className="mt-10 grid grid-cols-1 gap-6 md:mt-20 md:grid-cols-2 lg:grid-cols-3">
           <AnimatePresence>
@@ -60,7 +61,7 @@ const FeaturedDeals = () => {
                 <Link href={`/cars/${car.id}`} prefetch={false} className="group">
                   <Card
                     className={cn(
-                      'relative border-transparent ring-1 ring-gray-200 transition-all duration-300',
+                      'relative border-transparent ring-1 ring-[#F3F4F6] transition-all duration-300',
                       'hover:ring-vl-primary hover:shadow-[0_12px_20px_0_rgba(255,179,0,0.32)] hover:ring-2',
                     )}
                   >
@@ -94,7 +95,7 @@ const FeaturedDeals = () => {
                         ))}
                       </div>
 
-                      <div className="mt-1 h-[1px] w-full border-b"></div>
+                      <div className="mt-1 h-[1px] w-full border-b border-[#F3F4F6]"></div>
 
                       <p className="text-base font-bold md:text-xl">{car.price}</p>
                     </CardContent>

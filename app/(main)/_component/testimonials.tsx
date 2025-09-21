@@ -11,7 +11,7 @@ const Testimonials = () => {
 
   return (
     <section className="overflow-hidden bg-white py-24">
-      <div className="container mx-auto max-w-xl px-5 text-center">
+      <div className="container max-w-xl px-5 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -26,13 +26,13 @@ const Testimonials = () => {
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-vl-neutral-5 mx-auto mt-5 text-sm md:text-base"
+          className="text-vl-neutral-5 mx-auto mt-5 text-sm md:text-xl"
         >
           {TESTIMONIALS_SECTION.SUBHEADING}
         </motion.p>
       </div>
 
-      <div className="relative container mx-auto mt-20 overflow-clip px-5">
+      <div className="relative container mt-20 overflow-clip px-5">
         {/* Row 1 - scroll left */}
         <motion.div
           className="mb-10 flex gap-6"
@@ -62,8 +62,8 @@ const Testimonials = () => {
           ))}
         </motion.div>
         {/* Horizontal gradient effect on both sides */}
-        <div className="absolute top-0 left-0 h-full w-24 bg-gradient-to-r from-white to-transparent"></div>
-        <div className="absolute top-0 right-0 h-full w-24 bg-gradient-to-l from-white to-transparent"></div>
+        <div className="absolute top-0 left-0 hidden h-full w-24 bg-gradient-to-r from-white to-transparent md:block"></div>
+        <div className="absolute top-0 right-0 hidden h-full w-24 bg-gradient-to-l from-white to-transparent md:block"></div>
       </div>
     </section>
   );

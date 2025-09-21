@@ -1,4 +1,4 @@
-import { BadgeCheck, Search } from 'lucide-react';
+import { Search } from 'lucide-react';
 import Image from 'next/image';
 
 import { Button } from '@/components/ui/button';
@@ -22,7 +22,7 @@ const Hero = () => {
 
         {/* Featured  */}
         <div className="absolute bottom-0 w-full translate-y-1/2">
-          <div className="container mx-auto flex flex-col px-5 lg:flex-row">
+          <div className="container flex flex-col px-5 lg:flex-row">
             {HERO_CONTENT.stats.map((stat, i) => (
               <div
                 key={i}
@@ -49,15 +49,21 @@ const Hero = () => {
       </div>
 
       <div className="absolute top-56 w-full">
-        <div className="container mx-auto flex flex-col items-center justify-center gap-[60px] px-5">
+        <div className="container flex flex-col items-center justify-center gap-[60px] px-5">
           {/* Badge  */}
-          <div className="bg-vl-primary flex w-fit gap-2 rounded-full px-6 py-4 text-black">
-            <BadgeCheck />
-            <h3 className="font-medium">{HERO_CONTENT.badge.text}</h3>
+          <div className="bg-vl-primary flex w-fit items-center gap-2 rounded-full p-3 pr-4 text-black md:px-6 md:py-4">
+            <Image
+              src={HERO_CONTENT.badge.icon}
+              alt="badge-icon"
+              width={24}
+              height={24}
+              className="h-4 w-4 md:h-6 md:w-6"
+            />
+            <h3 className="text-xs font-medium md:text-base">{HERO_CONTENT.badge.text}</h3>
           </div>
 
           <div className="text-center">
-            <h1 className="w-[332px] text-[28px] font-bold md:w-2xl md:text-6xl">
+            <h1 className="xs:w-[332px] text-[28px] font-bold md:w-2xl md:text-6xl">
               {HERO_CONTENT.title}
             </h1>
             <h2 className="mx-auto mt-7 w-[268px] md:w-lg md:text-[28px]">
@@ -65,8 +71,11 @@ const Hero = () => {
             </h2>
           </div>
 
-          <div className="relative flex w-[332px] rounded-[8px] bg-white/20 backdrop-blur-[2px] md:w-[460px]">
-            <Input className="h-14 border-0 bg-transparent" placeholder="Search..." />
+          <div className="xs:w-[332px] relative flex rounded-[8px] bg-white/20 backdrop-blur-[2px] md:w-[460px]">
+            <Input
+              className="h-14 border-0 bg-transparent placeholder:text-white"
+              placeholder="Search..."
+            />
             <Button
               type="submit"
               variant={'vl-primary'}
