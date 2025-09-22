@@ -108,35 +108,37 @@ const Navbar = () => {
             </ul>
 
             {/* CTA Button */}
-            <Button
-              className={cn(
-                'group relative hidden h-[48px] w-[132px] items-center gap-2 overflow-hidden rounded-[8px] md:flex',
-                'text-vl-primary font-semibold transition-all duration-300',
-              )}
-            >
-              {/* Background circle animation */}
-              <span
+            <Link href="/contact" prefetch={false}>
+              <Button
                 className={cn(
-                  'bg-vl-primary absolute -top-22 -left-20 z-0 h-56 w-56 scale-20 rounded-full opacity-0 transition-all duration-300 ease-in-out',
-                  'group-hover:scale-150 group-hover:opacity-100',
+                  'group relative hidden h-[48px] w-[132px] items-center gap-2 overflow-hidden rounded-[8px] md:flex',
+                  'text-vl-primary font-semibold transition-all duration-300',
                 )}
-              />
+              >
+                {/* Background circle animation */}
+                <span
+                  className={cn(
+                    'bg-vl-primary absolute -top-22 -left-20 z-0 h-56 w-56 scale-20 rounded-full opacity-0 transition-all duration-300 ease-in-out',
+                    'group-hover:scale-150 group-hover:opacity-100',
+                  )}
+                />
 
-              {/* Text & Icon */}
-              <span className="relative z-10 text-sm transition-all duration-300 group-hover:text-black">
-                Contact
-              </span>
+                {/* Text & Icon */}
+                <span className="relative z-10 text-sm transition-all duration-300 group-hover:text-black">
+                  Contact
+                </span>
 
-              <Image
-                src={
-                  'https://blast-dew-99513560.figma.site/_assets/v11/2d046d4cbbaf2744e4c1686ddaed1ac7870693d5.svg'
-                }
-                alt="arrow"
-                width={20}
-                height={20}
-                className="relative z-10 transition-all duration-300 group-hover:translate-x-2 group-hover:-rotate-45 group-hover:brightness-0 group-hover:invert-0"
-              />
-            </Button>
+                <Image
+                  src={
+                    'https://blast-dew-99513560.figma.site/_assets/v11/2d046d4cbbaf2744e4c1686ddaed1ac7870693d5.svg'
+                  }
+                  alt="arrow"
+                  width={20}
+                  height={20}
+                  className="relative z-10 transition-all duration-300 group-hover:translate-x-2 group-hover:-rotate-45 group-hover:brightness-0 group-hover:invert-0"
+                />
+              </Button>
+            </Link>
           </div>
         </div>
       </nav>
