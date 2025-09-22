@@ -8,8 +8,8 @@ import BgHero from '@/public/images/bg-hero.jpg';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-[1250px] bg-white lg:min-h-[1224px]">
-      <div className="relative h-[1008px]">
+    <section className="relative min-h-[1100px] bg-white md:min-h-[1224px]">
+      <div className="relative h-[880px] md:h-[1008px]">
         <Image
           src={BgHero}
           alt="bg-hero"
@@ -48,7 +48,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="absolute top-56 w-full">
+      <div className="absolute top-32 w-full md:top-56">
         <div className="container flex flex-col items-center justify-center gap-[60px] px-5">
           {/* Badge  */}
           <div className="bg-vl-primary flex w-fit items-center gap-2 rounded-full p-3 pr-4 text-black md:px-6 md:py-4">
