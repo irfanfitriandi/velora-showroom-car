@@ -1,7 +1,6 @@
 'use client';
 
 import { AnimatePresence, motion } from 'framer-motion';
-import { MoveRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -17,6 +16,10 @@ const Navbar = () => {
   const [isScrolledUp, setIsScrolledUp] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
+  const [isShowNav, setIsShowNav] = useState(false);
+  const toggleNav = () => setIsShowNav((prev) => !prev);
+  const closeNav = () => setIsShowNav(false);
+
   const handleScroll = () => {
     if (typeof window !== 'undefined') {
       const currentScrollY = window.scrollY;
@@ -25,26 +28,29 @@ const Navbar = () => {
     }
   };
 
-  const [isShowNav, setIsShowNav] = useState(false);
-  const toggleNav = () => setIsShowNav((prev) => !prev);
-  const closeNav = () => setIsShowNav(false);
-
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lastScrollY]);
 
+  // disable scroll on body when menu is open
   useEffect(() => {
-    if (isShowNav) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
+    document.body.style.overflow = isShowNav ? 'hidden' : '';
     return () => {
       document.body.style.overflow = '';
     };
   }, [isShowNav]);
+
+  // menu links (stagger)
+  const linkVariants = {
+    hidden: { opacity: 0, x: 30 },
+    visible: (i: number) => ({
+      opacity: 1,
+      x: 0,
+      transition: { delay: i * 0.2, duration: 0.5 },
+    }),
+  };
 
   return (
     <div>
@@ -54,8 +60,13 @@ const Navbar = () => {
           isScrolledUp || isShowNav ? 'translate-y-0' : '-translate-y-full',
         )}
       >
-        <div className={cn('container mt-3 rounded-[12px] bg-white/80 p-4 backdrop-blur-sm')}>
-          <div className="flex items-center justify-between">
+        <div
+          className={cn(
+            'container mt-3 overflow-hidden rounded-[12px] bg-white/80 backdrop-blur-sm',
+          )}
+        >
+          <div className="flex h-[60px] items-center justify-between md:h-[88px]">
+            {/* Logo */}
             <Link
               href="/"
               className="flex items-center gap-2 text-xl font-bold text-black md:text-[28px]"
@@ -71,25 +82,60 @@ const Navbar = () => {
             </Link>
 
             {/* Desktop Menu */}
-            <ul className="hidden items-center space-x-8 md:flex">
+            <ul className="hidden items-center gap-8 md:flex">
               {NAV_LINKS.map((link) => (
-                <li key={link.path}>
+                <li key={link.path} className="group relative">
                   <Link
                     href={link.path}
                     className={cn(
-                      'pb-2 text-sm text-gray-600 transition-colors hover:text-black',
-                      pathname === link.path && 'font-bold text-black',
+                      'pb-2 text-sm transition-all duration-300 ease-in-out',
+                      pathname === link.path
+                        ? 'font-semibold text-black'
+                        : 'text-vl-neutral-5 font-medium group-hover:text-base group-hover:font-semibold group-hover:text-black',
                     )}
                   >
                     {link.label}
                   </Link>
+                  {/* underline animation */}
+                  <span
+                    className={cn(
+                      'bg-vl-primary absolute -bottom-8 left-0 h-1 w-0 transition-all duration-300',
+                      pathname === link.path ? 'w-full' : 'group-hover:w-full',
+                    )}
+                  />
                 </li>
               ))}
             </ul>
 
-            <Button className="hidden md:flex">
-              <span className="text-vl-primary">Contact</span>
-              <MoveRight className="fill-vl-primary ml-2" color="#FFB300" />
+            {/* CTA Button */}
+            <Button
+              className={cn(
+                'group relative hidden h-[48px] w-[132px] items-center gap-2 overflow-hidden rounded-[8px] md:flex',
+                'text-vl-primary font-semibold transition-all duration-300',
+              )}
+            >
+              {/* Background circle animation */}
+              <span
+                className={cn(
+                  'bg-vl-primary absolute -top-22 -left-20 z-0 h-56 w-56 scale-20 rounded-full opacity-0 transition-all duration-300 ease-in-out',
+                  'group-hover:scale-150 group-hover:opacity-100',
+                )}
+              />
+
+              {/* Text & Icon */}
+              <span className="relative z-10 text-sm transition-all duration-300 group-hover:text-black">
+                Contact
+              </span>
+
+              <Image
+                src={
+                  'https://blast-dew-99513560.figma.site/_assets/v11/2d046d4cbbaf2744e4c1686ddaed1ac7870693d5.svg'
+                }
+                alt="arrow"
+                width={20}
+                height={20}
+                className="relative z-10 transition-all duration-300 group-hover:translate-x-2 group-hover:-rotate-45 group-hover:brightness-0 group-hover:invert-0"
+              />
             </Button>
           </div>
         </div>
@@ -121,8 +167,15 @@ const Navbar = () => {
           >
             <div className="container">
               <ul className="mt-20 flex w-full flex-col items-end justify-end gap-5 text-[40px] font-bold">
-                {NAV_LINKS.map((link) => (
-                  <li key={link.path}>
+                {NAV_LINKS.map((link, i) => (
+                  <motion.li
+                    key={link.path}
+                    custom={i}
+                    initial="hidden"
+                    animate="visible"
+                    exit="hidden"
+                    variants={linkVariants}
+                  >
                     <Link
                       href={link.path}
                       onClick={closeNav}
@@ -134,9 +187,15 @@ const Navbar = () => {
                       {link.label}
                       {pathname === link.path && ' –'}
                     </Link>
-                  </li>
+                  </motion.li>
                 ))}
-                <li>
+                <motion.li
+                  custom={4}
+                  initial="hidden"
+                  animate="visible"
+                  exit="hidden"
+                  variants={linkVariants}
+                >
                   <Link
                     href={'/contact'}
                     onClick={closeNav}
@@ -148,7 +207,7 @@ const Navbar = () => {
                     {'contact'}
                     {pathname === '/contact' && ' –'}
                   </Link>
-                </li>
+                </motion.li>
               </ul>
             </div>
           </motion.div>
