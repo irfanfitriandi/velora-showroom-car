@@ -35,6 +35,17 @@ const Navbar = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lastScrollY]);
 
+  useEffect(() => {
+    if (isShowNav) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isShowNav]);
+
   return (
     <div>
       <nav
@@ -125,6 +136,19 @@ const Navbar = () => {
                     </Link>
                   </li>
                 ))}
+                <li>
+                  <Link
+                    href={'/contact'}
+                    onClick={closeNav}
+                    className={cn(
+                      'uppercase transition-colors',
+                      pathname === '/contact' ? 'text-vl-primary' : 'text-black',
+                    )}
+                  >
+                    {'contact'}
+                    {pathname === '/contact' && ' –'}
+                  </Link>
+                </li>
               </ul>
             </div>
           </motion.div>
