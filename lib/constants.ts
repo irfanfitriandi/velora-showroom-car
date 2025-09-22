@@ -6,7 +6,7 @@ export const NAV_LINKS = [
     path: '/',
   },
   {
-    label: 'Cars for Sale',
+    label: 'Cars',
     path: '/cars',
   },
   {
