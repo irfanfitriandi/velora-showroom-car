@@ -1,5 +1,8 @@
 'use client';
 
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+
 import {
   Accordion,
   AccordionContent,
@@ -9,12 +12,10 @@ import {
 import { FAQ_SECTION } from '@/lib/constants';
 import { cn } from '@/lib/utils';
 import TextVelora from '@/public/images/text-velora-grad.png';
-import { motion } from 'framer-motion';
-import Image from 'next/image';
 
 const FaqSection = () => {
   return (
-    <section className="bg-vl-neutral-2 md:py-20">
+    <section className="bg-vl-neutral-2 md:py-[100px]">
       <div className="bg-vl-neutral-9 relative container overflow-hidden px-5 py-12 md:rounded-[12px] md:py-24">
         {/* Heading */}
         <motion.div

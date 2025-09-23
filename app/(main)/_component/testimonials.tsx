@@ -1,8 +1,9 @@
 'use client';
 
+import { motion } from 'framer-motion';
+
 import TestimonialCard from '@/components/card/testimonial-card';
 import { TESTIMONIALS_SECTION } from '@/lib/constants';
-import { motion } from 'framer-motion';
 
 const Testimonials = () => {
   const half = Math.ceil(TESTIMONIALS_SECTION.TESTIMONIALS.length / 2);
@@ -10,7 +11,7 @@ const Testimonials = () => {
   const secondRow = TESTIMONIALS_SECTION.TESTIMONIALS.slice(half);
 
   return (
-    <section className="overflow-hidden bg-white py-24">
+    <section className="overflow-hidden bg-white py-[50px] md:py-[100px]">
       <div className="container max-w-xl px-5 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}

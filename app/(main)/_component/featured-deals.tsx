@@ -42,7 +42,7 @@ const FeaturedDeals = () => {
       : HOT_DEALS_CARS.filter((car) => car.brand === activeFilter);
 
   return (
-    <section className="text-vl-neutral-9 bg-white py-24">
+    <section className="text-vl-neutral-9 bg-white py-[50px] md:py-[100px]">
       <div className="container px-5">
         {/* Heading */}
         <motion.div
@@ -74,7 +74,7 @@ const FeaturedDeals = () => {
                 variant={activeFilter === filter ? 'vl-primary' : 'vl-default'}
                 className={cn(
                   'border text-sm transition-all duration-300 hover:brightness-90 md:text-base',
-                  activeFilter === filter && 'border-0 font-bold',
+                  activeFilter === filter && 'border-0 font-bold hover:!brightness-100',
                 )}
               >
                 {filter}
@@ -105,7 +105,7 @@ const FeaturedDeals = () => {
                         src={car.image}
                         alt={`${car.brand} ${car.model}`}
                         fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
                       />
                     </div>
 
@@ -168,40 +168,35 @@ const FeaturedDeals = () => {
 
         {/* CTA */}
         <motion.div
-          className="mt-28 flex justify-center pb-4"
+          className="mt-22 flex justify-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
         >
           <Link href="/cars" prefetch={false}>
+            {/* Button primary  */}
             <Button
               className={cn(
-                'group relative hidden h-[48px] items-center gap-2 overflow-hidden rounded-[8px] px-4 md:flex',
-                'text-vl-primary font-semibold transition-all duration-300',
+                'group bg-vl-primary relative h-[40px] items-center gap-2 overflow-hidden rounded-[8px] px-4 md:h-[48px]',
+                'hover:shadow-vl-primary/30 font-semibold text-black transition-all duration-300 hover:shadow-lg',
               )}
             >
-              {/* Background circle animation */}
               <span
                 className={cn(
-                  'bg-vl-primary absolute -top-22 -left-20 z-0 h-56 w-56 scale-20 rounded-full opacity-0 transition-all duration-300 ease-in-out',
+                  'absolute -top-22 -left-20 z-0 h-56 w-56 scale-20 rounded-full bg-black opacity-0 transition-all duration-300 ease-in-out',
                   'group-hover:scale-150 group-hover:opacity-100',
                 )}
               />
-
-              {/* Text & Icon */}
-              <span className="relative z-10 text-sm transition-all duration-300 group-hover:text-black">
+              <span className="group-hover:text-vl-primary relative z-10 text-sm transition-colors duration-300">
                 Explore Cars
               </span>
-
               <Image
-                src={
-                  'https://blast-dew-99513560.figma.site/_assets/v11/2d046d4cbbaf2744e4c1686ddaed1ac7870693d5.svg'
-                }
+                src="https://blast-dew-99513560.figma.site/_assets/v11/2d046d4cbbaf2744e4c1686ddaed1ac7870693d5.svg"
                 alt="arrow"
                 width={20}
                 height={20}
-                className="relative z-10 transition-all duration-300 group-hover:translate-x-2 group-hover:brightness-0 group-hover:invert-0"
+                className="relative z-10 brightness-0 invert-0 transition-all duration-300 group-hover:translate-x-2 group-hover:brightness-100"
               />
             </Button>
           </Link>

@@ -7,7 +7,7 @@ interface IProps extends HTMLAttributes<HTMLSpanElement> {
 }
 
 const Hamburger = ({ isActive, className = '', onClick, ...props }: IProps) => {
-  const layerClasss = 'h-[2px] rounded-lg bg-black transition-all duration-500 ';
+  const layerClasss = 'h-[2px] rounded-lg bg-black transition-all duration-300 ';
 
   return (
     <span

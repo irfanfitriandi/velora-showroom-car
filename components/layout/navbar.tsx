@@ -111,7 +111,7 @@ const Navbar = () => {
             <Link href="/contact" prefetch={false}>
               <Button
                 className={cn(
-                  'group relative hidden h-[48px] w-[132px] items-center gap-2 overflow-hidden rounded-[8px] md:flex',
+                  'group relative hidden h-[40px] w-[132px] items-center gap-2 overflow-hidden rounded-[8px] md:flex md:h-[48px]',
                   'text-vl-primary font-semibold transition-all duration-300',
                 )}
               >
