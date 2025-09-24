@@ -18,7 +18,7 @@ const Blog = () => {
       ref={ref}
       className="bg-white px-6 py-[50px] text-gray-900 md:px-10 md:py-[100px] xl:px-20"
     >
-      <div className="mx-auto max-w-7xl">
+      <div className="container">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

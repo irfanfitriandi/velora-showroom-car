@@ -111,19 +111,19 @@ export const HOT_DEALS_FILTERS = [
   'Nissan',
 ];
 
-export const HOT_DEALS_CARS = [
+export const LIST_CARS = [
   {
     id: 1,
     brand: 'BMW',
     model: '520d',
     year: 2014,
-    image:
+    thumbnailImage:
       'https://blast-dew-99513560.figma.site/_assets/v11/05719a3fc9f44854eb4eeee38dac3f4138f5d34a.png',
     specs: [
       {
         label: 'Year',
         icon: 'https://blast-dew-99513560.figma.site/_assets/v11/5325263adcdf9b66d84cec2217f9ff1086f23f6a.svg',
-        value: 2018,
+        value: '2018',
       },
       {
         label: 'Transmission',
@@ -149,13 +149,13 @@ export const HOT_DEALS_CARS = [
     brand: 'Audi',
     model: 'A4',
     year: 2015,
-    image:
+    thumbnailImage:
       'https://blast-dew-99513560.figma.site/_assets/v11/05719a3fc9f44854eb4eeee38dac3f4138f5d34a.png',
     specs: [
       {
         label: 'Year',
         icon: 'https://blast-dew-99513560.figma.site/_assets/v11/5325263adcdf9b66d84cec2217f9ff1086f23f6a.svg',
-        value: 2018,
+        value: '2018',
       },
       {
         label: 'Transmission',
@@ -181,13 +181,13 @@ export const HOT_DEALS_CARS = [
     brand: 'Toyota',
     model: 'Camry',
     year: 2018,
-    image:
+    thumbnailImage:
       'https://blast-dew-99513560.figma.site/_assets/v11/05719a3fc9f44854eb4eeee38dac3f4138f5d34a.png',
     specs: [
       {
         label: 'Year',
         icon: 'https://blast-dew-99513560.figma.site/_assets/v11/5325263adcdf9b66d84cec2217f9ff1086f23f6a.svg',
-        value: 2018,
+        value: '2018',
       },
       {
         label: 'Transmission',
@@ -213,13 +213,13 @@ export const HOT_DEALS_CARS = [
     brand: 'Audi',
     model: 'A4',
     year: 2015,
-    image:
+    thumbnailImage:
       'https://blast-dew-99513560.figma.site/_assets/v11/05719a3fc9f44854eb4eeee38dac3f4138f5d34a.png',
     specs: [
       {
         label: 'Year',
         icon: 'https://blast-dew-99513560.figma.site/_assets/v11/5325263adcdf9b66d84cec2217f9ff1086f23f6a.svg',
-        value: 2018,
+        value: '2018',
       },
       {
         label: 'Transmission',
@@ -245,13 +245,13 @@ export const HOT_DEALS_CARS = [
     brand: 'Toyota',
     model: 'Camry',
     year: 2018,
-    image:
+    thumbnailImage:
       'https://blast-dew-99513560.figma.site/_assets/v11/05719a3fc9f44854eb4eeee38dac3f4138f5d34a.png',
     specs: [
       {
         label: 'Year',
         icon: 'https://blast-dew-99513560.figma.site/_assets/v11/5325263adcdf9b66d84cec2217f9ff1086f23f6a.svg',
-        value: 2018,
+        value: '2018',
       },
       {
         label: 'Transmission',
@@ -277,13 +277,13 @@ export const HOT_DEALS_CARS = [
     brand: 'BMW',
     model: '520d',
     year: 2014,
-    image:
+    thumbnailImage:
       'https://blast-dew-99513560.figma.site/_assets/v11/05719a3fc9f44854eb4eeee38dac3f4138f5d34a.png',
     specs: [
       {
         label: 'Year',
         icon: 'https://blast-dew-99513560.figma.site/_assets/v11/5325263adcdf9b66d84cec2217f9ff1086f23f6a.svg',
-        value: 2018,
+        value: '2018',
       },
       {
         label: 'Transmission',
