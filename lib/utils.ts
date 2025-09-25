@@ -130,4 +130,11 @@ export function generateCars(count: number): Car[] {
   });
 }
 
-export const LIST_CARS: Car[] = generateCars(100);
+let cachedCars: Car[] | null = null;
+
+export const getCarsFromSession = (): Car[] => {
+  if (!cachedCars) {
+    cachedCars = generateCars(110); // generate 1x per server start or restart
+  }
+  return cachedCars;
+};

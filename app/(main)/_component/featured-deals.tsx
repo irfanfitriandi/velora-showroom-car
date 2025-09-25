@@ -10,7 +10,8 @@ import { CarCard } from '@/components/card/car-card';
 import { AutoJustifyScrollRow } from '@/components/shared/auto-justify-scroll-row';
 import { Button } from '@/components/ui/button';
 import { HOT_DEALS_FILTERS } from '@/lib/constants';
-import { cn, generateCars } from '@/lib/utils';
+import { Car as CarType } from '@/lib/types';
+import { cn } from '@/lib/utils';
 
 // Variants for stagger
 const containerVariants = {
@@ -33,9 +34,8 @@ const itemVariants = {
   exit: { opacity: 0, y: 40, transition: { duration: 0.3 } },
 };
 
-const FeaturedDeals = () => {
+const FeaturedDeals = ({ listCars }: { listCars: CarType[] }) => {
   const [activeFilter, setActiveFilter] = useState('All Car');
-  const listCars = generateCars(110);
 
   const filteredCars =
     activeFilter === 'All Car'

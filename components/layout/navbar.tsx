@@ -62,7 +62,7 @@ const Navbar = () => {
       >
         <div
           className={cn(
-            'container mt-3 overflow-hidden rounded-[12px] bg-white/80 backdrop-blur-sm',
+            'container mt-3 overflow-hidden rounded-[12px] border bg-white/80 backdrop-blur-sm',
           )}
         >
           <div className="flex h-[60px] items-center justify-between md:h-[88px]">
