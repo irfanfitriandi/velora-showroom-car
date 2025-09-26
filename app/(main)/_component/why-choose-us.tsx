@@ -63,7 +63,6 @@ const WhyChooseUS = () => {
               >
                 <div className="flex flex-col items-start gap-4">
                   <div className="bg-vl-primary rounded-md p-4">
-                    {}
                     <Image
                       src={feature.icon}
                       alt={`${feature.title}-icon`}

@@ -218,15 +218,17 @@ export const WhyVeloraSection = () => {
   const { heading, description, features } = WHY_VELORA_SECTION;
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
 
+  // TODO: Hover card grid
+
   return (
-    <section className="rounded-xl bg-neutral-950 px-6 py-20 md:px-10 xl:px-20">
-      <div className="mx-auto max-w-7xl space-y-12 text-center text-white">
+    <section className="bg-vl-neutral-2 relative right-[50%] left-[50%] mx-[-50vw] w-screen py-0 md:py-[100px]">
+      <div className="bg-vl-neutral-9 container py-[50px] text-white md:rounded-[12px] md:p-[100px]">
         <motion.h2
           ref={ref}
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
           variants={fadeUp}
-          className="text-3xl font-bold md:text-4xl"
+          className="text-center text-[28px] font-semibold md:text-[40px]"
         >
           {heading}
         </motion.h2>
@@ -236,13 +238,13 @@ export const WhyVeloraSection = () => {
           animate={inView ? 'visible' : 'hidden'}
           variants={fadeUp}
           transition={{ delay: 0.2 }}
-          className="mx-auto max-w-2xl text-sm text-neutral-300 md:text-lg"
+          className="text-vl-neutral-3 text-center text-sm md:text-[20px]"
         >
           {description}
         </motion.p>
 
         {/* Feature Cards */}
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <div className="mt-10 grid grid-cols-1 gap-6 md:mt-20 md:grid-cols-2">
           {features.map((item, idx) => (
             <motion.div
               key={item.id}
@@ -252,23 +254,15 @@ export const WhyVeloraSection = () => {
               variants={fadeUp}
               className="relative overflow-hidden rounded-lg bg-neutral-900 p-6 transition duration-300 hover:bg-neutral-800"
             >
-              {/* Icon */}
-              <div className="bg-vl-primary mb-4 flex h-10 w-10 items-center justify-center rounded p-2">
-                <Image
-                  src={item.icon}
-                  alt={item.title}
-                  width={24}
-                  height={24}
-                  className="text-white"
-                />
+              <div className="flex flex-col items-start gap-4">
+                <div className="bg-vl-primary rounded-md p-4">
+                  <Image src={item.icon} alt={`${item.title}-icon`} width={28} height={28} />
+                </div>
+                <h4 className="text-base font-semibold text-white md:text-[20px]">{item.title}</h4>
+                <p className="text-sm text-gray-300 md:text-base">{item.description}</p>
               </div>
 
-              {/* Content */}
-              <h3 className="text-base font-semibold md:text-lg">{item.title}</h3>
-              <p className="mt-2 text-sm text-neutral-300 md:text-base">{item.description}</p>
-
-              {/* Background Number */}
-              <span className="pointer-events-none absolute right-4 bottom-2 text-[100px] font-black text-white/5 select-none">
+              <span className="absolute right-6 bottom-24 text-[180px] leading-0 font-bold text-neutral-100/[4%]">
                 {item.id}
               </span>
             </motion.div>
