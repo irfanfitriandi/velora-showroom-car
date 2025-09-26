@@ -11,7 +11,7 @@ import BgHero from '@/public/images/bg-hero.jpg';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-[1135px] overflow-hidden bg-white md:min-h-[1224px]">
+    <section className="relative h-[1135px] overflow-hidden bg-white text-white md:h-[1280px] lg:h-[1224px]">
       <div className="relative h-[880px] md:h-[1008px]">
         <Image
           src={BgHero}
