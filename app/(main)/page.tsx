@@ -1,3 +1,5 @@
+import { getCarsFromSession } from '@/lib/utils';
+
 import Blog from './_component/blog';
 import Faq from './_component/faq';
 import FeaturedDeals from './_component/featured-deals';
@@ -6,10 +8,12 @@ import Testimonials from './_component/testimonials';
 import WhyChooseUS from './_component/why-choose-us';
 
 const Home = () => {
+  const listCars = getCarsFromSession();
+
   return (
     <>
       <Hero />
-      <FeaturedDeals />
+      <FeaturedDeals listCars={listCars} />
       <WhyChooseUS />
       <Testimonials />
       <Faq />

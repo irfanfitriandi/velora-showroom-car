@@ -20,23 +20,6 @@ export type FaqItem = {
   answer: string;
 };
 
-export type CarSpec = {
-  label: string;
-  icon: string; // path to SVG
-  value: string | number;
-};
-
-export type HotDealsCar = {
-  id: number;
-  brand: string;
-  model: string;
-  year: number;
-  image: string;
-  specs: CarSpec[];
-  price: string;
-  highlight: boolean;
-};
-
 export type BlogPost = {
   id: string;
   slug: string;
@@ -60,4 +43,100 @@ export type BlogPost = {
   categories?: string[];
   isFeatured?: boolean;
   status?: 'draft' | 'published' | 'scheduled';
+};
+
+// Car Type
+
+export type TransmissionType = 'Manual' | 'Automatic' | 'CVT' | 'Dual Clutch';
+export type DrivetrainType = 'FWD' | 'RWD' | 'AWD' | '4WD';
+export type FuelType = 'Petrol' | 'Diesel' | 'Electric' | 'Hybrid';
+export type CarCondition = 'Excellent' | 'Good' | 'Fair' | 'Needs Repair';
+export type LicensePlateType = 'odd' | 'even' | 'not-registered';
+export type VehicleType =
+  | 'SUV'
+  | 'MPV'
+  | 'Sedan'
+  | 'Hatchback'
+  | 'Pickup'
+  | 'Convertible'
+  | 'Coupe'
+  | 'Wagon'
+  | 'Van'
+  | 'Crossover'
+  | 'Minivan'
+  | 'Other';
+export type CarStatus = 'available' | 'sold';
+
+export type CarSpec = {
+  label: string;
+  value: string;
+  icon: string;
+};
+
+export type CarAuthor = {
+  name: string;
+  contact: string;
+};
+
+export type Car = {
+  id: number;
+  brand: string;
+  model: string;
+  year: number;
+
+  // Media
+  thumbnailImage: string;
+  images: string[]; // Additional gallery
+  videoUrl?: string;
+
+  // Deskripsi
+  description: string;
+  specs: CarSpec[];
+
+  // Pricing
+  price: number;
+  negotiable: boolean;
+  highlight: boolean;
+  status: CarStatus;
+
+  // Core Specs
+  transmission: TransmissionType;
+  engineCC: number;
+  drivetrain: DrivetrainType;
+  fuelType: FuelType;
+
+  // Appearance
+  exteriorColor: string;
+  interiorColor: string;
+
+  // Usage Info
+  kilometersDriven: number;
+  ownershipCount: number;
+  licensePlateType: LicensePlateType;
+  stnkExpiryDate?: string;
+
+  // Kondisi
+  condition: CarCondition;
+  accidentRecord: boolean;
+  warrantyAvailable: boolean;
+  serviceRecordAvailable: boolean;
+
+  // Kategori & Metadata
+  vehicleType: VehicleType;
+  vinNumber?: string;
+  tags: string[]; // e.g. ['Tangan Pertama', 'Full Original']
+  seoSlug: string;
+
+  // Lokasi & Relasi
+  location: string;
+  showroomId: number;
+  author: CarAuthor;
+
+  // Stats
+  viewsCount: number;
+  favoriteCount: number;
+
+  // Timestamps
+  createdAt: string;
+  updatedAt: string;
 };

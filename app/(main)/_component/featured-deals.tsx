@@ -1,15 +1,16 @@
 'use client';
 
 import { AnimatePresence, motion } from 'framer-motion';
-import { Car, MoveUpRight } from 'lucide-react';
+import { Car } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 
+import { CarCard } from '@/components/card/car-card';
 import { AutoJustifyScrollRow } from '@/components/shared/auto-justify-scroll-row';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { HOT_DEALS_CARS, HOT_DEALS_FILTERS } from '@/lib/constants';
+import { HOT_DEALS_FILTERS } from '@/lib/constants';
+import { Car as CarType } from '@/lib/types';
 import { cn } from '@/lib/utils';
 
 // Variants for stagger
@@ -33,16 +34,16 @@ const itemVariants = {
   exit: { opacity: 0, y: 40, transition: { duration: 0.3 } },
 };
 
-const FeaturedDeals = () => {
+const FeaturedDeals = ({ listCars }: { listCars: CarType[] }) => {
   const [activeFilter, setActiveFilter] = useState('All Car');
 
   const filteredCars =
     activeFilter === 'All Car'
-      ? HOT_DEALS_CARS
-      : HOT_DEALS_CARS.filter((car) => car.brand === activeFilter);
+      ? listCars.slice(0, 6)
+      : listCars.filter((car) => car.brand === activeFilter).slice(0, 6);
 
   return (
-    <section className="text-vl-neutral-9 bg-white py-24">
+    <section className="text-vl-neutral-9 bg-white py-[50px] md:py-[100px]">
       <div className="container px-5">
         {/* Heading */}
         <motion.div
@@ -74,7 +75,7 @@ const FeaturedDeals = () => {
                 variant={activeFilter === filter ? 'vl-primary' : 'vl-default'}
                 className={cn(
                   'border text-sm transition-all duration-300 hover:brightness-90 md:text-base',
-                  activeFilter === filter && 'border-0 font-bold',
+                  activeFilter === filter && 'border-0 font-bold hover:!brightness-100',
                 )}
               >
                 {filter}
@@ -94,51 +95,7 @@ const FeaturedDeals = () => {
             {filteredCars.map((car) => (
               <motion.div key={car.id} layout variants={itemVariants} exit="exit">
                 <Link href={`/cars/${car.id}`} prefetch={false} className="group">
-                  <Card
-                    className={cn(
-                      'relative border-transparent ring-1 ring-[#F3F4F6] transition-all duration-300',
-                      'hover:ring-vl-primary hover:-translate-y-1 hover:shadow-[0_12px_20px_0_rgba(255,179,0,0.32)] hover:ring-2',
-                    )}
-                  >
-                    <div className="relative h-[220px] w-full overflow-hidden">
-                      <Image
-                        src={car.image}
-                        alt={`${car.brand} ${car.model}`}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-110"
-                      />
-                    </div>
-
-                    <CardContent className="flex flex-col gap-4 p-5">
-                      <h3 className="text-base font-semibold md:text-[20px]">
-                        {car.brand} {car.model} ({car.year})
-                      </h3>
-                      <div className="grid grid-cols-2 gap-4">
-                        {car.specs.map((spec) => (
-                          <div key={spec.label} className="flex gap-2">
-                            <Image
-                              src={spec.icon}
-                              alt={spec.label}
-                              width={20}
-                              height={20}
-                              className="h-4 w-4 object-contain md:h-5 md:w-5"
-                            />
-                            <span className="text-xs font-medium text-black md:text-sm">
-                              {spec.value}
-                            </span>
-                          </div>
-                        ))}
-                      </div>
-
-                      <div className="mt-1 h-[1px] w-full border-b border-[#F3F4F6]"></div>
-
-                      <p className="text-base font-bold md:text-xl">{car.price}</p>
-                    </CardContent>
-
-                    <div className="bg-vl-primary absolute top-2 right-2 w-fit rounded-full p-2 opacity-0 transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:rotate-12 group-hover:opacity-100">
-                      <MoveUpRight size={20} />
-                    </div>
-                  </Card>
+                  <CarCard key={car.id} car={car} />
                 </Link>
               </motion.div>
             ))}
@@ -168,40 +125,35 @@ const FeaturedDeals = () => {
 
         {/* CTA */}
         <motion.div
-          className="mt-28 flex justify-center pb-4"
+          className="mt-22 flex justify-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
         >
           <Link href="/cars" prefetch={false}>
+            {/* Button primary  */}
             <Button
               className={cn(
-                'group relative hidden h-[48px] items-center gap-2 overflow-hidden rounded-[8px] px-4 md:flex',
-                'text-vl-primary font-semibold transition-all duration-300',
+                'group bg-vl-primary relative h-[40px] items-center gap-2 overflow-hidden rounded-[8px] px-4 md:h-[48px]',
+                'hover:shadow-vl-primary/30 font-semibold text-black transition-all duration-300 hover:shadow-lg',
               )}
             >
-              {/* Background circle animation */}
               <span
                 className={cn(
-                  'bg-vl-primary absolute -top-22 -left-20 z-0 h-56 w-56 scale-20 rounded-full opacity-0 transition-all duration-300 ease-in-out',
+                  'absolute -top-22 -left-20 z-0 h-56 w-56 scale-20 rounded-full bg-black opacity-0 transition-all duration-300 ease-in-out',
                   'group-hover:scale-150 group-hover:opacity-100',
                 )}
               />
-
-              {/* Text & Icon */}
-              <span className="relative z-10 text-sm transition-all duration-300 group-hover:text-black">
+              <span className="group-hover:text-vl-primary relative z-10 text-sm transition-colors duration-300">
                 Explore Cars
               </span>
-
               <Image
-                src={
-                  'https://blast-dew-99513560.figma.site/_assets/v11/2d046d4cbbaf2744e4c1686ddaed1ac7870693d5.svg'
-                }
+                src="https://blast-dew-99513560.figma.site/_assets/v11/2d046d4cbbaf2744e4c1686ddaed1ac7870693d5.svg"
                 alt="arrow"
                 width={20}
                 height={20}
-                className="relative z-10 transition-all duration-300 group-hover:translate-x-2 group-hover:brightness-0 group-hover:invert-0"
+                className="relative z-10 brightness-0 invert-0 transition-all duration-300 group-hover:translate-x-2 group-hover:brightness-100"
               />
             </Button>
           </Link>

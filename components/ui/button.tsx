@@ -56,3 +56,34 @@ function Button({
 }
 
 export { Button, buttonVariants };
+
+// Primary without shadow
+{
+  /* <Button
+  className={cn(
+    'group bg-vl-primary relative h-[40px] items-center gap-2 overflow-hidden rounded-[8px] px-4 md:h-[48px]',
+    'font-semibold text-black transition-all duration-300',
+  )}
+>
+  <span
+    className={cn(
+      'absolute -top-22 -left-20 z-0 h-56 w-56 scale-20 rounded-full bg-black opacity-0 transition-all duration-300 ease-in-out',
+      'group-hover:scale-150 group-hover:opacity-100',
+    )}
+  />
+
+  <span className="group-hover:text-vl-primary relative z-10 text-sm transition-all duration-300">
+    Explore Cars
+  </span>
+
+  <Image
+    src={
+      'https://blast-dew-99513560.figma.site/_assets/v11/2d046d4cbbaf2744e4c1686ddaed1ac7870693d5.svg'
+    }
+    alt="arrow"
+    width={20}
+    height={20}
+    className="relative z-10 brightness-0 invert-0 transition-all duration-300 group-hover:translate-x-2 group-hover:brightness-100"
+  />
+</Button>; */
+}
