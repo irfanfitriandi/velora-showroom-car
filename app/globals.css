@@ -220,3 +220,18 @@ body {
   background: #ffb300;
   color: #000;
 }
+
+/* ANIMATION  */
+@keyframes marquee-vertical {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.animate-marquee-vertical {
+  animation: marquee-vertical 20s linear infinite;
+  will-change: transform;
+}

@@ -9,7 +9,7 @@ import WhyChooseUS from './_component/why-choose-us';
 
 const Home = () => {
   const listCars = getCarsFromSession();
-  
+
   return (
     <>
       <Hero />
