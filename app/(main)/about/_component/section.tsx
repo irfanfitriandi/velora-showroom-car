@@ -116,8 +116,11 @@ export const CompanyValuesSection = () => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <section ref={ref} className="bg-neutral-900 px-6 py-12 md:px-10 md:py-20 xl:px-20">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 divide-y divide-neutral-700 md:grid-cols-3 md:divide-x md:divide-y-0">
+    <section
+      ref={ref}
+      className="bg-vl-neutral-9 relative right-[50%] left-[50%] mx-[-50vw] w-screen py-[50px] md:py-[100px]"
+    >
+      <div className="container grid grid-cols-1 divide-y divide-neutral-700 md:grid-cols-3 md:divide-x md:divide-y-0">
         {COMPANY_VALUES.map((item, idx) => (
           <motion.div
             key={idx}
@@ -125,10 +128,10 @@ export const CompanyValuesSection = () => {
             initial="hidden"
             animate={inView ? 'visible' : 'hidden'}
             variants={fadeUp}
-            className="px-4 py-6 md:px-6 md:py-0"
+            className="py-4 first:pt-0 first:pl-0 last:pr-0 last:pb-0 md:px-[60px] md:py-0"
           >
-            <h3 className="text-base font-semibold text-white md:text-lg">{item.title}</h3>
-            <p className="mt-3 text-sm text-neutral-400 md:text-base">{item.description}</p>
+            <h3 className="text-base font-semibold text-white md:text-[28px]">{item.title}</h3>
+            <p className="pt-4 text-sm text-neutral-400 md:text-[20px]">{item.description}</p>
           </motion.div>
         ))}
       </div>
@@ -140,29 +143,31 @@ export const MilestonesSection = () => {
   const { heading, image, timeline } = MILESTONES_SECTION;
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
 
-  return (
-    <section className="bg-white px-6 py-16 md:px-10 xl:px-20">
-      <div className="mx-auto max-w-7xl space-y-10">
-        <motion.h2
-          ref={ref}
-          initial="hidden"
-          animate={inView ? 'visible' : 'hidden'}
-          variants={fadeUp}
-          className="text-2xl font-bold text-gray-900 md:text-4xl"
-        >
-          {heading}
-        </motion.h2>
+  // TODO: Responsive Height n Bullet Z Index in Timeline
 
-        <div className="flex flex-col gap-12 md:flex-row md:items-start md:gap-16">
+  return (
+    <section className="relative bg-white py-[50px] lg:py-[100px]">
+      <div className="relative grid grid-cols-1 gap-10 lg:grid-cols-2">
+        <div className="flex h-fit w-full flex-col gap-10 lg:sticky lg:top-20 lg:max-w-[560px]">
+          <motion.h2
+            ref={ref}
+            initial="hidden"
+            animate={inView ? 'visible' : 'hidden'}
+            variants={fadeUp}
+            className="text-vl-neutral-9 text-[28px] font-semibold lg:text-[40px]"
+          >
+            {heading}
+          </motion.h2>
+
           {/* Image */}
           <motion.div
             initial="hidden"
             animate={inView ? 'visible' : 'hidden'}
             variants={fadeUp}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="relative w-full overflow-hidden rounded-lg md:w-[40%]"
+            className="relative w-full overflow-hidden rounded-[8px]"
           >
-            <div className="aspect-[4/3] w-full">
+            <div className="aspect-[335/292] w-full lg:aspect-[560/280]">
               <Image
                 src={image.src}
                 alt={image.alt}
@@ -172,27 +177,37 @@ export const MilestonesSection = () => {
               />
             </div>
           </motion.div>
+        </div>
 
-          {/* Timeline */}
-          <div className="relative flex-1 border-l border-gray-200 pl-6">
-            {timeline.map((item, idx) => (
-              <motion.div
-                key={idx}
-                custom={idx}
-                initial="hidden"
-                animate={inView ? 'visible' : 'hidden'}
-                variants={fadeUp}
-                className="relative mb-10"
-              >
-                <div className="absolute top-1.5 left-[-11px] h-3 w-3 rounded-full bg-gray-300" />
+        {/* Timeline */}
+        <div className="relative w-full border-l-2 border-dashed border-neutral-300 lg:max-w-[600px]">
+          {timeline.map((item, idx) => (
+            <motion.div
+              key={idx}
+              custom={idx}
+              initial="hidden"
+              animate={inView ? 'visible' : 'hidden'}
+              variants={fadeUp}
+              className="sticky top-24 mb-10 flex gap-2 bg-transparent"
+              style={{
+                transform: `translateY(${idx * 4}rem)`, // offset card
+                zIndex: timeline.length + idx,
+              }}
+            >
+              <div className="mt-[14px] ml-[-7px] h-fit md:mt-6 lg:ml-[-13px]">
+                <div className="h-3 w-3 rounded-full bg-neutral-300 lg:h-6 lg:w-6" />
+              </div>
 
-                <h3 className="text-lg font-semibold text-gray-900">
+              <div className="bg-white py-2 md:py-4">
+                <h3 className="bg-white text-base font-semibold text-black md:text-[28px]">
                   {item.year} – {item.title}
                 </h3>
-                <p className="mt-2 text-sm text-gray-600">{item.description}</p>
-              </motion.div>
-            ))}
-          </div>
+                <p className="mt-2 h-24 bg-white text-sm text-gray-600 md:text-[20px]">
+                  {item.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
@@ -203,15 +218,17 @@ export const WhyVeloraSection = () => {
   const { heading, description, features } = WHY_VELORA_SECTION;
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
 
+  // TODO: Hover card grid
+
   return (
-    <section className="rounded-xl bg-neutral-950 px-6 py-20 md:px-10 xl:px-20">
-      <div className="mx-auto max-w-7xl space-y-12 text-center text-white">
+    <section className="bg-vl-neutral-2 relative right-[50%] left-[50%] mx-[-50vw] w-screen py-0 md:py-[100px]">
+      <div className="bg-vl-neutral-9 container py-[50px] text-white md:rounded-[12px] md:p-[100px]">
         <motion.h2
           ref={ref}
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
           variants={fadeUp}
-          className="text-3xl font-bold md:text-4xl"
+          className="text-center text-[28px] font-semibold md:text-[40px]"
         >
           {heading}
         </motion.h2>
@@ -221,13 +238,13 @@ export const WhyVeloraSection = () => {
           animate={inView ? 'visible' : 'hidden'}
           variants={fadeUp}
           transition={{ delay: 0.2 }}
-          className="mx-auto max-w-2xl text-sm text-neutral-300 md:text-lg"
+          className="text-vl-neutral-3 text-center text-sm md:text-[20px]"
         >
           {description}
         </motion.p>
 
         {/* Feature Cards */}
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <div className="mt-10 grid grid-cols-1 gap-6 md:mt-20 md:grid-cols-2">
           {features.map((item, idx) => (
             <motion.div
               key={item.id}
@@ -237,23 +254,15 @@ export const WhyVeloraSection = () => {
               variants={fadeUp}
               className="relative overflow-hidden rounded-lg bg-neutral-900 p-6 transition duration-300 hover:bg-neutral-800"
             >
-              {/* Icon */}
-              <div className="bg-vl-primary mb-4 flex h-10 w-10 items-center justify-center rounded p-2">
-                <Image
-                  src={item.icon}
-                  alt={item.title}
-                  width={24}
-                  height={24}
-                  className="text-white"
-                />
+              <div className="flex flex-col items-start gap-4">
+                <div className="bg-vl-primary rounded-md p-4">
+                  <Image src={item.icon} alt={`${item.title}-icon`} width={28} height={28} />
+                </div>
+                <h4 className="text-base font-semibold text-white md:text-[20px]">{item.title}</h4>
+                <p className="text-sm text-gray-300 md:text-base">{item.description}</p>
               </div>
 
-              {/* Content */}
-              <h3 className="text-base font-semibold md:text-lg">{item.title}</h3>
-              <p className="mt-2 text-sm text-neutral-300 md:text-base">{item.description}</p>
-
-              {/* Background Number */}
-              <span className="pointer-events-none absolute right-4 bottom-2 text-[100px] font-black text-white/5 select-none">
+              <span className="absolute right-6 bottom-24 text-[180px] leading-0 font-bold text-neutral-100/[4%]">
                 {item.id}
               </span>
             </motion.div>

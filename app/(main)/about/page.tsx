@@ -1,5 +1,4 @@
 import {
-  AboutServiceSection,
   CompanyValuesSection,
   HeroSection,
   MilestonesSection,
@@ -16,7 +15,7 @@ const About = () => {
         <MilestonesSection />
         <WhyVeloraSection />
         <TestimonialsSection />
-        <AboutServiceSection />
+        {/* <AboutServiceSection /> */}
       </div>
     </div>
   );
