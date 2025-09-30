@@ -12,7 +12,7 @@ const Testimonials = () => {
 
   return (
     <section className="overflow-hidden bg-white py-[50px] md:py-[100px]">
-      <div className="container max-w-xl px-5 text-center">
+      <div className="container max-w-xl text-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -33,7 +33,7 @@ const Testimonials = () => {
         </motion.p>
       </div>
 
-      <div className="relative container mt-20 overflow-clip px-5">
+      <div className="relative container mt-20 overflow-clip">
         {/* Row 1 - scroll left */}
         <motion.div
           className="mb-10 flex gap-6"

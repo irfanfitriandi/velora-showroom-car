@@ -34,7 +34,7 @@ const Hero = () => {
           }}
           className="absolute bottom-0 w-full translate-y-1/2"
         >
-          <div className="container flex flex-col px-5 lg:flex-row">
+          <div className="container flex flex-col lg:flex-row">
             {HERO_CONTENT.stats.map((stat, i) => (
               <motion.div
                 key={i}
@@ -66,7 +66,7 @@ const Hero = () => {
       </div>
 
       <div className="absolute top-32 w-full md:top-56">
-        <div className="container flex flex-col items-center justify-center gap-[60px] px-5">
+        <div className="container flex flex-col items-center justify-center gap-[60px]">
           {/* Badge */}
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
