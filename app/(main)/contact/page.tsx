@@ -1,12 +1,13 @@
-// components/ContactSection.tsx
 'use client';
 
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+
+import InputWithLabel from '@/components/shared/input-with-label';
+import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
+import { Textarea } from '@/components/ui/textarea';
+import { cn } from '@/lib/utils';
 
 const CONTACT_DATA = {
   heading: 'Get in Touch',
@@ -27,7 +28,7 @@ const CONTACT_DATA = {
     'Citywalk Sudirman 2nd Floor, Karet Tengsin, Kecamatan Tanah Abang, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10220',
 };
 
-export default function ContactSection() {
+const ContactPage = () => {
   return (
     <section className="relative h-[1390px] overflow-hidden bg-white text-white">
       {/* Hero with overlay */}
@@ -87,10 +88,10 @@ export default function ContactSection() {
       </div>
 
       {/* FORM  */}
-      <div className="relative -top-28 container md:-top-64">
+      <div className="relative -top-28 container md:-top-52">
         <div className="flex flex-col overflow-hidden rounded-[8px] border md:flex-row">
           {/* Map */}
-          <div className="h-[314px] w-full overflow-hidden md:h-[620px]">
+          <div className="h-[314px] w-full overflow-hidden bg-white md:h-[620px] md:w-[53%]">
             <iframe
               src="https://www.google.com/maps?q=Citywalk%20Sudirman%202nd%20Floor%2C%20Karet%20Tengsin%2C%20Kecamatan%20Tanah%20Abang%2C%20Kota%20Jakarta%20Pusat%2C%20Daerah%20Khusus%20Ibukota%20Jakarta%2010220&output=embed"
               width="100%"
@@ -102,22 +103,55 @@ export default function ContactSection() {
           </div>
 
           {/* Form */}
-          <Card className="rounded-none">
-            <CardContent className="grid gap-4 p-6">
-              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                <Input placeholder="Name" />
-                <Input placeholder="Email" type="email" />
-              </div>
-              <Input placeholder="Subject" />
-              <Input placeholder="Phone Number" type="tel" />
-              <Textarea placeholder="Message" rows={5} />
-              <Button className="mt-2 w-fit self-end bg-black text-white hover:bg-neutral-900">
-                Submit →
+          <div className="flex flex-col gap-4 bg-white p-5 md:w-[47%] md:p-20">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+              <InputWithLabel label="Name" placeholder="Name" />
+              <InputWithLabel label="Email" placeholder="Email" type="email" />
+            </div>
+            <InputWithLabel label="Subject" placeholder="Subject" />
+            <InputWithLabel label="Phone Number" placeholder="Phone Number" type="tel" />
+            <div className="flex flex-col gap-2">
+              <div className="text-sm font-medium text-black">Message</div>
+              <Textarea className="text-sm" placeholder="Message" rows={5} />
+            </div>
+
+            <div className="mt-2 md:mt-3.5">
+              <Button
+                className={cn(
+                  'group relative flex h-[40px] w-[108px] items-center gap-2 overflow-hidden rounded-[8px] pr-6 md:h-[48px]',
+                  'text-vl-primary font-semibold transition-all duration-300',
+                )}
+                type="submit"
+              >
+                {/* Background circle animation */}
+                <span
+                  className={cn(
+                    'bg-vl-primary absolute -top-22 -left-20 z-0 h-56 w-56 scale-20 rounded-full opacity-0 transition-all duration-300 ease-in-out',
+                    'group-hover:scale-150 group-hover:opacity-100',
+                  )}
+                />
+
+                {/* Text & Icon */}
+                <span className="relative z-10 text-sm transition-all duration-300 group-hover:text-black">
+                  Submit
+                </span>
+
+                <Image
+                  src={
+                    'https://blast-dew-99513560.figma.site/_assets/v11/2d046d4cbbaf2744e4c1686ddaed1ac7870693d5.svg'
+                  }
+                  alt="arrow"
+                  width={20}
+                  height={20}
+                  className="relative z-10 transition-all duration-300 group-hover:translate-x-2 group-hover:-rotate-45 group-hover:brightness-0 group-hover:invert-0"
+                />
               </Button>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   );
-}
+};
+
+export default ContactPage;
