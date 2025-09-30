@@ -19,16 +19,16 @@ const fadeUpVariants = {
   }),
 };
 
-const FILTERS = [
-  'Body Type',
-  'Price (IDR)',
-  'Year',
-  'Brand',
-  'Kilometers Driven',
-  'Fuel Type',
-  'Transmission',
-  'License Plate',
-];
+// const FILTERS = [
+//   'Body Type',
+//   'Price (IDR)',
+//   'Year',
+//   'Brand',
+//   'Kilometers Driven',
+//   'Fuel Type',
+//   'Transmission',
+//   'License Plate',
+// ];
 
 const CarsPage = () => {
   const [isMobileFilterOpen, setMobileFilterOpen] = useState(false);

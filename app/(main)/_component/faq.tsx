@@ -16,7 +16,7 @@ import TextVelora from '@/public/images/text-velora-grad.png';
 const FaqSection = () => {
   return (
     <section className="bg-vl-neutral-2 text-white md:py-[100px]">
-      <div className="bg-vl-neutral-9 relative container overflow-hidden px-5 py-12 md:rounded-[12px] md:py-24">
+      <div className="bg-vl-neutral-9 relative container overflow-hidden py-12 md:rounded-[12px] md:py-24">
         {/* Heading */}
         <motion.div
           className="mx-auto max-w-[720px] text-center"

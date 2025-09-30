@@ -10,7 +10,7 @@ const WhyChooseUS = () => {
 
   return (
     <section ref={ref} className="relative bg-neutral-900 py-[50px] text-white md:py-[100px]">
-      <div className="relative container grid grid-cols-1 gap-10 px-5 lg:grid-cols-2">
+      <div className="relative container grid grid-cols-1 gap-10 lg:grid-cols-2">
         {/* LEFT SIDE: Sticky Heading */}
         <div className="h-fit w-full self-start lg:sticky lg:top-20 lg:max-w-[568px]">
           <motion.h2

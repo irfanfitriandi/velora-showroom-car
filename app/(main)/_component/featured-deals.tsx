@@ -44,7 +44,7 @@ const FeaturedDeals = ({ listCars }: { listCars: CarType[] }) => {
 
   return (
     <section className="text-vl-neutral-9 bg-white py-[50px] md:py-[100px]">
-      <div className="container px-5">
+      <div className="container">
         {/* Heading */}
         <motion.div
           className="mx-auto max-w-2xl text-center"
